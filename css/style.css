@@ -328,7 +328,7 @@ tr.view-log td.listingname a							{ background-image:url('../../dressprow/image
 
 /* initialise form */
 #initialiseform input[type="submit"]                      { border-color:#000}
-#initialiseform input[type="submit"]:disabled             { border-color:#CCC}
+#initialiseform input[type="submit"]:disabled             { border-color:#CCC} 
 
 
 /* login page */
