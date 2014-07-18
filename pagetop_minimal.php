@@ -5,7 +5,7 @@
   by the developers  but also helps build interest, traffic and use of
   PHPlist, which is beneficial to it's future development.
 
-  Michiel Dethmers, phpList Ltd 2003 - 2013
+  Michiel Dethmers, phpList Ltd 2003 - 2014
 */
 
 /** Purpose of this file: header with minimal styles for pages in iframes and ajaxed
@@ -21,4 +21,5 @@
 <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
 <meta name="Powered-By" content="phplist version <?php echo VERSION?>" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head><body>
 
