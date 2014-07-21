@@ -1804,6 +1804,11 @@ tr.view-log td.listingname a							{ background-image:url('../../dressprow/image
 
 /******************************* 11. SPECIAL PAGES */
 
+/* initialise form */
+#initialiseform input[type="submit"]                      { border-color:#000}
+#initialiseform input[type="submit"]:disabled             { border-color:#CCC} 
+
+
 /* login page */
 #login-form *											{ border:none; font-size:100%}
 form#login-form											{ background:url('../../dressprow/images/login.png') 5% 30% no-repeat; margin:0 auto; margin-top:40px; margin-bottom:20px; padding-top:20px; padding-left:130px; border-width:1px; border-style:solid; max-width:250px;}
