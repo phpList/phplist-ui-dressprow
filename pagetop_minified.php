@@ -22,7 +22,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="SHORTCUT ICON" id="favicon" href="./images/phplist.ico" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<link rel="stylesheet" href="ui/dressprow/css/all.min.css" />
+<link rel="stylesheet" href="ui/dressprow/css/all.min.css?v=<?php echo filemtime(dirname(__FILE__).'/css/all.min.css'); ?>" />
 
 <?php
 if (isset($GLOBALS['config']['head'])) {

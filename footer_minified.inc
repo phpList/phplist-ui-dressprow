@@ -27,6 +27,6 @@
         </div>
     </div>
 </div>
-<script language="Javascript" type="text/javascript" src="ui/dressprow/js/all.min.js"></script>
+<script language="Javascript" type="text/javascript" src="ui/dressprow/js/all.min.js?v=<?php echo filemtime(dirname(__FILE__).'/js/all.min.js'); ?>"></script>
 
 
