@@ -177,4 +177,40 @@ $(document).ready(function() {
 	  $( ".rows" ).height(rowsH);
 	  $('.tmptable').remove();
 	});	
+	
+	        // Avoid hardcoding usind #targetlistN
+	$('body.send').find('.ui-tabs div li').each(function(){
+	  var li = $(this);
+	  listify(li);
+	});
+        listify_finish_tab('.campaignTracking');
+        listify_finish_tab('.resetStatistics');
+        listify_finish_tab('.isTestCampaign');
+
+        function listify_finish_tab(selector)
+        {
+            var cbx = $(selector).find('input[type=checkbox]');
+            var cbx_name = $(cbx).attr('name');
+            var label = $(selector).find('label');
+            $(cbx).attr('id', cbx_name);
+            $(label).attr('for', cbx_name);
+        }
+
+        function listify(selector)
+        {
+            $(selector).each(function(index, val) {
+                // Give all checkboxes the same ID as the name attribute
+                var cbx_name = $(this).find('input[type=checkbox]').attr('name');
+                $(this).find('input[type=checkbox]').attr('id', cbx_name);
+
+                // Wrap the contents of the <li> with a <label>
+                var content = $(this).html();
+                $(this).html('<label for="' + cbx_name + '">' + content + '</label>');
+
+                // Pop the checkbox out of the label (for CSS selecting reasons)
+                var cbx = $(this).find('input[type=checkbox]');
+                $(this).prepend(cbx);
+                $(cbx).hide();
+            });
+        }
 });
