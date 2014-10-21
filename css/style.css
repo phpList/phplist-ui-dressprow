@@ -263,10 +263,7 @@ tr .listingname a:hover, tr .listingelement a:hover		{ text-decoration:none;}
 #listselection li label:before                          { content: "";display: inline-block;vertical-align: middle;width: 1.5em;height: 1.5em;border-width: 1px; border-style: solid;margin-right: .75em;border-radius: 2px;text-align: center;}
 #listselection li label br                              { clear: both; }
 
-#excludelist1 li input[type='checkbox']:checked + label:before,
-#excludelist2 li input[type='checkbox']:checked + label:before,
-#targetlist2 li input[type='checkbox']:checked + label:before,
-#targetlist1 li input[type='checkbox']:checked + label:before { content: "✓"; font-weight: bold;}
+#listselection .tabbed div li input[type='checkbox']:checked + label:before { content: "✓"; font-weight: bold;}
 
 
 /******************************* 10. ICONS AND BUTTONS */
