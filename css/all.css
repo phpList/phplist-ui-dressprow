@@ -867,12 +867,6 @@ color:#060;
 	input[type="reset"],
 	input[type="button"] {
 		background: #eee; /* Old browsers */
-		background: #eee -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%); /* FF3.6+ */
-		background: #eee -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(0,0,0,.2))); /* Chrome,Safari4+ */
-		background: #eee -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Chrome10+,Safari5.1+ */
-		background: #eee -o-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Opera11.10+ */
-		background: #eee -ms-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* IE10+ */
-		background: #eee linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* W3C */
 	  border: 1px solid #aaa;
 	  border-top: 1px solid #ccc;
 	  border-left: 1px solid #ccc;
@@ -890,7 +884,7 @@ color:#060;
 	  margin: 5px 10px 5px 0px;
 	  line-height: normal;
 	  padding: 8px 10px;
-	  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+	  font-family: Arial, Helvetica, sans-serif; }
 
 	.button:hover,
 	button:hover,
@@ -900,12 +894,6 @@ color:#060;
 	    text-decoration: none;
 		color: #222;
 		background: #ddd; /* Old browsers */
-		background: #ddd -moz-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%); /* FF3.6+ */
-		background: #ddd -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.3)), color-stop(100%,rgba(0,0,0,.3))); /* Chrome,Safari4+ */
-		background: #ddd -webkit-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Chrome10+,Safari5.1+ */
-		background: #ddd -o-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Opera11.10+ */
-		background: #ddd -ms-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* IE10+ */
-		background: #ddd linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* W3C */
 	  border: 1px solid #888;
 	  border-top: 1px solid #aaa;
 	  border-left: 1px solid #aaa; }
@@ -917,12 +905,7 @@ color:#060;
 	input[type="button"]:active {
 		border: 1px solid #666;
 		background: #ccc; /* Old browsers */
-		background: #ccc -moz-linear-gradient(top, rgba(255,255,255,.35) 0%, rgba(10,10,10,.4) 100%); /* FF3.6+ */
-		background: #ccc -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.35)), color-stop(100%,rgba(10,10,10,.4))); /* Chrome,Safari4+ */
-		background: #ccc -webkit-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* Chrome10+,Safari5.1+ */
-		background: #ccc -o-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* Opera11.10+ */
-		background: #ccc -ms-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* IE10+ */
-		background: #ccc linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* W3C */ }
+	}
 
 	.button.full-width,
 	button.full-width,
@@ -1034,7 +1017,7 @@ color:#060;
 		-moz-border-radius: 2px;
 		-webkit-border-radius: 2px;
 		border-radius: 2px;
-		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 13px Arial, Helvetica, sans-serif;
 		color: #777;
 		margin: 0;
 		width: 210px;
@@ -1502,7 +1485,7 @@ TABLE OF CONTENT
 
 /******************************* 1. GENERAL STYLES */
 
-body													{ font:13px/1.5 Tahoma,'Helvetica Neue','Liberation Sans',FreeSans,Arial,sans-serif; padding:0; margin:0; background:url('../../dressprow/images/page_bk.png') repeat-x;}
+body													{ font:13px/1.5 Arial, Helvetica, sans-serif; padding:0; margin:0; background:url('../../dressprow/images/page_bk.png') repeat-x;}
 body.nobackground										{ font-size: 14px; background:url('../../dressprow/images/spacer.png') repeat-x; }
 hr														{ border:0; border-style:solid; border-top-width:1px; clear:both; height:0; margin:10px 0px;}
 table													{ /* this put same width on all columns for break-word: table-layout:fixed; */ width:100%;}
@@ -1514,8 +1497,7 @@ select													{ word-wrap:normal;width:100%; max-width:220px;}
 input[type="file"]							 			{ width:100%}
 input.listorder								 			{ width:25px !important;}
 a,a.hide:hover											{ text-decoration:none;}
-a:focus													{ outline:1px dotted}
-a:active, a:visited								 		{ outline:none;}
+a:focus,:focus,a:active, a:visited					    { outline:none;}
 h1, h2, h3, h4, h5, h6									{ font-weight:normal;}
 h1														{ font-size:25px;}
 h2														{ font-size:23px;}
@@ -1543,7 +1525,7 @@ div.panel h2											{ margin-bottom:5px; font-size:20px;}
 p,dl,h1,h2,h4,h5,h6,ol,pre,table,address,fieldset,figure{ margin-bottom:20px;}
 form .actions											{ border:0px;}
 div.submit, p.button									{ margin:10px 0px;}
-.shade1, .shade2										{ margin-bottom:5px; padding:1px; background:url("../../dressprow/images/header-bg.gif") repeat-x scroll 0 0;}
+.shade1, .shade2										{ margin-bottom:1.15em; padding:0px;  border-bottom: 1px; border-style:solid;}
 
 
 /******************************* 2. STRUCTURE DIVS */
@@ -1554,8 +1536,8 @@ div.submit, p.button									{ margin:10px 0px;}
 #logo													{ margin:0;}
 #content												{ min-height:400px; margin-top:10px;}
 div.actions												{ margin:10px 0px; padding:10px 0px;}
-div.panel												{ background:url("../../dressprow/images/header-bg.gif") repeat-x scroll 0 0; clear:both; border-width:1px; border-style:solid; margin:0px; padding:5px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;}
-div.panel .content										{ border-width:1px; border-style:solid; padding:5px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;}
+div.panel												{ clear:both; border-width:1px; border-style:solid; margin:0px; padding:.75em; -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;}
+div.panel .content										{ border:0px; padding:1em; -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;}
 .panel .content .wrapper								{ margin-top:10px;}
 
 
@@ -1571,7 +1553,7 @@ div.panel .content										{ border-width:1px; border-style:solid; padding:5px;
 
 /******************************* 4. INFOS, ALERTS AND ERRORS */
 
-.note													{ clear:both; border-width:1px; border-style:solid; margin:0px 0px 20px; padding:10px; font-style:italic; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;}
+.note													{ clear:both; border-width:1px; border-style:solid; margin:0px 0px 20px; padding:10px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;}
 .note h3												{ font-style:normal; margin:0; font-size:12pt;}
 .note p													{ margin-bottom:5px;}
 .hide													{ background:url('../../dressprow/images/close_button1.gif') no-repeat; display:block; float:right; margin-top:-5px; margin-right:-5px; overflow:hidden; height:20px; text-indent:-9999px; width:20px;}
@@ -1598,7 +1580,7 @@ div.panel .content										{ border-width:1px; border-style:solid; padding:5px;
 #menuTop												{ float:left; width:auto !important;}
 #menuTop a 												{ background:transparent !important; border:0 !important; display:block; margin-top:-1px; line-height:17px; text-decoration:none;}
 #menuTop ul li a 										{ padding:10px 10px !important;}
-#menuTop ul li											{ margin:0px; font-size:15px; margin-right:0px;}
+#menuTop ul li											{ margin:0px; font-size:15px; margin-right:0px;transition: .1s all ease-out;}
 #menuTop ul ul li										{ overflow:hidden; border-bottom-width:1px !important; border-bottom-style:dotted !important; zoom:1; filter:alpha(opacity=97); opacity:0.97;}
 #menuTop ul ul li a										{ font-size:13px; margin:0px; padding:4px 4px 4px 25px !important; width:auto !important; min-width:200px;}
 #menuTop ul ul li a:hover								{ border-top-width:1px !important; border-top-style:solid !important; border-bottom-width:1px !important; border-bottom-style:solid !important; padding-bottom:3px !important; padding-top:3px !important;}
@@ -1608,8 +1590,8 @@ span#menu-button span:hover								{ cursor:pointer;}
 
 
 /******************************* 7. ACCORDION */
-.ui-widget												{font-family:Tahoma,Arial,Helvetica,sans-serif;}
-h3.ui-accordion-header a								{ background:url('../../dressprow/images/grad.png') repeat-x;}
+.ui-widget												{font-family:Arial,Helvetica,sans-serif;}
+.ui-widget-header                                       { background:transparent}
 div.accordion table td									{ border:0px; vertical-align:middle; padding:10px;}
 div.accordion table										{ width:auto;}
 div.accordion table td a								{ font-size:11px; text-align:center; display:block; height:auto; padding:45px 5px 10px 5px;}
@@ -1620,7 +1602,6 @@ div.accordion table td a.hometext						{ font-size:14px; text-align:left; vertic
 div.accordion table td.listingelement					{ font-size:11px;}
 div.accordion table td.listingname						{ width:auto; height:70px; font-size:11px;}
 .ui-accordion-content .panel							{ border:0px; background:transparent;}
-.ui-accordion-content									{ background:url('../../dressprow/images/grad.png') repeat-x 0px -30px;}
 div.accordion table										{ table-layout:auto;}
 div.accordion td, div.accordion th						{ overflow:auto; text-align:left;}
 div.accordion tr td.listingname a						{ -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px; min-width:100px;}
@@ -1628,26 +1609,21 @@ div.accordion tr .listingname a.listingname:hover		{ text-decoration:none; font-
 div.accordion .panel .content,
 div.accordion .panel .content td						{ border:0px;}
 div.accordion h3										{ margin-bottom:0px; -moz-border-radius-topright:0px; -moz-border-radius-topleft:0px; -webkit-border-top-right-radius:0px; -webkit-border-top-left-radius:0px; border-top-left-radius:0px; border-top-right-radius:0px; -moz-border-radius-bottomright:0px; -moz-border-radius-bottomleft:0px; -webkit-border-bottom-right-radius:0px; -webkit-border-bottom-left-radius:0px; border-bottom-left-radius:0px; border-bottom-right-radius:0px;}
-div.accordion h3.ui-state-active						{ border-bottom:0px;margin-bottom:0px; }
+div.accordion h3.ui-state-active						{ border:0px;margin-bottom:0px; }
 div.accordion .ui-accordion-content,
 div.accordion .ui-accordion-content div,
-div.accordion .ui-accordion-content div td 				{ margin:0px !important; border-top:0px; top:0px;}
+div.accordion .ui-accordion-content div td 				{ margin:0px !important; border:0px; top:0px;padding:0.25em}
 
 /******************************* 8. TABS [ui-tabs, webblertabs (and minitabs) and sendtabs] */
 
 /* ui tabs */
 ul.ui-tabs-nav											{ padding:0px}
-.ui-tabs-nav li											{ font-size:14px; font-family:Tahoma,'Helvetica Neue','Liberation Sans',FreeSans,sans-serif; -webkit-border-top-right-radius:8px; -webkit-border-top-left-radius:8px; -moz-border-radius-topright:8px; -moz-border-radius-topleft:8px; border-top-right-radius:8px; border-top-left-radius:8px;}
+.ui-tabs-nav li											{ font-size:14px; font-family:Arial, Helvetica,sans-serif; -webkit-border-top-right-radius:8px; -webkit-border-top-left-radius:8px; -moz-border-radius-topright:8px; -moz-border-radius-topleft:8px; border-top-right-radius:8px; border-top-left-radius:8px;}
 .ui-tabs-nav li a										{ padding:8px 5px !important;}
-
-/*
- * are these used ? 
- *  .ui-tabs-panel table td									{ text-align:left; font-size:12px;}
-.*/
-.ui-tabs												{font-family:Tahoma, Arial, Helvetica, sans-serif;font-size:14px;line-height:normal}
-.ui-tabs .ui-tabs-nav									{padding:0px}
+.ui-tabs												{ font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:normal}
+.ui-tabs .ui-tabs-nav									{ padding:0px}
 .ui-tabs .ui-tabs-panel					 				{ padding:6px 2px 0px;}
-.ui-tabs-panel h3,body#app .ui-tabs-panel h2.account	{font-size:18px;padding:2px 10px;}
+.ui-tabs-panel h3,body#app .ui-tabs-panel h2.account	{ font-size:18px;padding:2px 10px;}
 ui-tabs table th 										{ font-size: 14px;  font-weight:bold;  }
 div.notes, a.footnote 									{ font-size: 10px; vertical-align: super; }
 
@@ -1661,7 +1637,7 @@ div.dropButton .submenu a 								{ line-height:12px; padding:7px; margin-top:5p
 #webblertabs ul li a									{ padding:1px 10px !important; width:150px; overflow:hidden;}
 div.dropButton .submenu a:hover 						{ margin-top:5px;}
 #webblertabs ul, #webblertabs ul li,
-#webblertabs ul li a 									{ width:170px; margin:0px; padding:1px 0px; border:none; clear:both; font-size:15px; line-height:15px; font-variant:small-caps; -webkit-border-radius:6px; -moz-border-radius:6px; border-radius:6px;}
+#webblertabs ul li a 									{ width:170px; margin:0px; padding:1px 0px; border:none; clear:both; font-size:15px; line-height:15px; -webkit-border-radius:6px; -moz-border-radius:6px; border-radius:6px;}
 #webblertabs ul li:hover,
 div.dropButton .submenu a:hover							{ border-width:1px; border-style:solid;} 
 
@@ -1722,7 +1698,8 @@ span.listingelement select								{ width:100%;}
 .row1 .viewusers .button								{ vertical-align:middle;}
 tr.row  td												{ max-width:100px;}
 td.listingelement, td.listingname, th, td.listingrowname{ text-align:center !important;}
-.listinghdelement, .listinghdname, .listingsmall		{ font-size:9px; padding:1px; text-transform:uppercase;}
+.listinghdelement,.listinghdname                        { font-size: .95em; padding:1px; text-transform: capitalize;}
+.listingsmall		                                    { font-size:9px; padding:1px; text-transform:uppercase;}
 .content .listingsmall, .content .listingsmall			{ padding:2px !important; font-weight:bold;}
 tr td.listingname a,tr td.listinelement a,span.add_member,
 span.delete a.confirm,span.send-list a.button,
@@ -1735,6 +1712,22 @@ tr .listingname a:hover, tr .listingelement a:hover		{ text-decoration:none;}
 
 /* drag and drop */
 .save													{ background:url('../../dressprow/images/16x16/alert.png'); height:16px; width:16px; display:inline-block; margin-right:5px;}
+
+#listselection ul                                       { list-style-type: none;padding-left: 0;margin-top: 1em;}
+#listselection .tabbed                                  { border: 1px;border-style: solid;}
+#listselection .tabbed > ul                             { border: 0;margin: 0;}
+
+#excludelist1 li,#excludelist2 li,
+#targetlist2 li,#targetlist1 li                         { margin: .5em;}
+
+#listselection li label                                 { transition: .075s background ease-out;font-weight: normal;display: block;vertical-align: middle;min-height: 1.75em;line-height: 1.5;padding: .4em;border-radius: 3px;cursor: pointer;}
+#listselection li label:before                          { content: "";display: inline-block;vertical-align: middle;width: 1.5em;height: 1.5em;border-width: 1px; border-style: solid;margin-right: .75em;border-radius: 2px;text-align: center;}
+#listselection li label br                              { clear: both; }
+
+#excludelist1 li input[type='checkbox']:checked + label:before,
+#excludelist2 li input[type='checkbox']:checked + label:before,
+#targetlist2 li input[type='checkbox']:checked + label:before,
+#targetlist1 li input[type='checkbox']:checked + label:before { content: "✓"; font-weight: bold;}
 
 
 /******************************* 10. ICONS AND BUTTONS */
@@ -1754,9 +1747,9 @@ a.del													{ background:url('../../dressprow/images/16x16/mini-trash.png'
 span.yes												{ background:url('../../dressprow/images/16x16/yes.png') no-repeat;}
 span.no													{ background:url('../../dressprow/images/16x16/no.png') no-repeat;}
 .firstinstallbutton										{ cursor:pointer; margin-left:4px; padding:5px 10px; -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px;}
-a.action-button, input.action-button					{ cursor:pointer;  margin:10px 0px; padding:5px 15px; text-transform:lowercase; -webkit-border-radius:8px; -moz-border-radius:8px; border-radius:8px; font-size:15px; clear:both; font-weight:normal; text-shadow:none; border:0;white-space:nowrap;}
-a.action-button											{ line-height:50px}
-a.reset, a.confirm										{ border-width:1px; border-style:solid; padding:4px 12px; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; display:inline-block; font-size:11px; font-weight:bold; text-decoration:none; cursor:pointer; margin:5px 10px 5px 0px; line-height:normal; padding:8px 10px; font-family:Tahoma,"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;}
+a.action-button, input.action-button					{ cursor:pointer;  margin:10px 0px; padding:5px 15px; -webkit-border-radius:8px; -moz-border-radius:8px; border-radius:8px; font-size:15px; clear:both; font-weight:normal; text-shadow:none; border:0;white-space:nowrap;}
+a.action-button											{ line-height:50px;transition: .1s all ease-out; }
+a.reset, a.confirm										{ border-width:1px; border-style:solid; padding:4px 12px; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; display:inline-block; font-size:11px; font-weight:bold; text-decoration:none; cursor:pointer; margin:5px 10px 5px 0px; line-height:normal; padding:8px 10px; font-family:Arial, Helvetica, sans-serif;}
 span.add_member a										{ background:url("../../dressprow/images/16x16/add-members.png") no-repeat scroll 50% 50%;}
 span.delete a.button,span.delete a.confirm				{ background:url("../../dressprow/images/16x16/mini-trash.png") no-repeat scroll 50% 50%;}
 span.edit a.button,span.edit-list a.button				{ background:url("../../dressprow/images/16x16/edit-1.png") no-repeat scroll 50% 50%;}
@@ -1813,6 +1806,28 @@ tr.plugin td.listingname a								{ background-image:url('../../dressprow/images
 tr.setup td.listingname a								{ background-image:url('../../dressprow/images/32x32/config.png');}
 tr.dbcheck td.listingname a								{ background-image:url('../../dressprow/images/32x32/database.png');}
 tr.view-log td.listingname a							{ background-image:url('../../dressprow/images/32x32/order-162.png');}
+
+
+#login, #logout, .block, .panel .step-nav a.next, 
+.panel .step-nav a.back, div.configEdit a.ajaxable, 
+.minitabs #webblertabs ul li.current,.button, button, 
+input[type="submit"], input[type="reset"], 
+input[type="button"]                                    { transition: .1s all ease-out;font-family:Arial,Helvetica,sans-serif}
+
+a.ajaxable, a.helpdialog                                { transition: .1s all ease-out;opacity: .6;}
+a.ajaxable:hover, a.helpdialog:hover                    { opacity: 1;}
+
+.campaignTracking,.resetStatistics,.isTestCampaign      { display: block; float: left; clear: both; padding-bottom: .7em;}
+
+.campaignTracking .helpdialog,
+.resetStatistics .helpdialog,.isTestCampaign .helpdialog{ float: right;}
+
+.campaignTracking input[type=checkbox],
+.resetStatistics input[type=checkbox],
+.isTestCampaign input[type=checkbox]                    { float: left;}
+
+.campaignTracking label,.resetStatistics label,
+.isTestCampaign label                                   { cursor: pointer;}
 
 
 /******************************* 11. SPECIAL PAGES */
@@ -1965,8 +1980,9 @@ body.send .field label									{ display:block; font-weight:bold;}
 body.send .sendNotify label								{ display:block; width:100%;}
 body.send .panel .content div							{ margin-bottom:5px;} 
 body.send textarea										{ width:88%;}
-#addtoqueue												{ margin:10px; padding:10px; border-width:1px; border-style:solid;}
+#addtoqueue												{ margin: 1em 0; padding:0px;border:0;clear:both}
 #addtoqueue .missing									{ padding:15px; padding-left:25px; background:url('../../dressprow/images/16x16/alert.png')  3px center no-repeat; border-width:1px; border-style:solid;}
+#addtoqueuebutton                                       { padding: .75em 1.5em !important;font-weight: bold;}
 a.helpdialog, a.resourcereference						{ height:16px; width:16px; background:url('../../dressprow/images/16x16/info.png') no-repeat; display:inline-block; overflow:hidden; text-indent:9999px; margin-left:5px;}
 #addtoqueue .error										{ padding:5px; margin-top:20px; padding-left:25px; background:url('../../dressprow/images/16x16/error.png')  3px center no-repeat; border:1px solid red;}
 
@@ -2003,11 +2019,12 @@ table.bounceActions .submit								{ margin-top:15px;}
 table.bounceActions tr td								{ border:0px !important;}
 
 /* configure page */
-div.configEdit											{ line-height:14px;margin-bottom:10px; padding:3px}
+div.configEdit											{ line-height: 1;margin-bottom: .6em;padding: .2em;}
+div.configEdit b                                        { display: inline-block;padding-top: .5em;padding-bottom: .2em;}
 div.configEdit a.ajaxable								{ background:url('../../dressprow/images/16x16/edit-1.png') 60% 50% no-repeat; height:16px; width:16px; display:inline-block; text-indent:-9999px; overflow:hidden; float:left; margin:0px 10px 0px 4px; padding:3px 10px; border-style: solid; border-width: 1px; -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px;}
-div.configcontent										{ padding:2px 15px 10px;}
+div.configcontent, div.configEditing, .configValue      { padding: .9em;}
 .configForm fieldset									{ border-width:1px; border-style:solid; padding:15px;}
-.configForm legend										{ font-weight:normal; font-size:18px; background: url('../../dressprow/images/header-bg.gif') repeat-x; border-width:1px; border-style:solid; padding:0px 10px; -webkit-border-radius:6px; -moz-border-radius:6px; border-radius:6px;}
+.configForm legend										{ font-weight:normal; font-size: 1.15em;  border-width:1px; border-style:solid;padding: .25em .45em;-webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;}
 div.date select 										{ display:inline; width:auto;}
 
 /* dbcheck page */
@@ -2037,9 +2054,9 @@ body.templates span.button 								{ background-image:none; float:right; margin-
 .block ul li a, li.shade0 a								{ border-bottom-width:1px; border-bottom-style:dotted; display:block; padding:5px 0; padding-left:10px;}
 .block ul li br, li.shade0 br							{ display:none;}
 .block ul li a:hover, li.shade0 a:hover					{ text-decoration:none;}
-.menutableright h3										{ margin:0; font-size:12pt; background:url('../../dressprow/images/header-bg.gif') repeat-x; border-bottom-width:1px; border-bottom-style:dotted; padding-left:5px; font-variant:small-caps; -webkit-border-top-right-radius:6px; -webkit-border-top-left-radius:6px; -moz-border-radius-topright:6px; -moz-border-radius-topleft:6px; border-top-right-radius:6px; border-top-left-radius:6px;}
+.menutableright h3										{ margin:0; font-size:1.15em;  border-bottom-width:1px; border-bottom-style:dotted; padding: .25em .5em; -webkit-border-top-right-radius:3px; -webkit-border-top-left-radius:3px; -moz-border-radius-topright:3px; -moz-border-radius-topleft:3px; border-top-right-radius:3px; border-top-left-radius:3px;}
 #languageswitcher										{ float:right; margin:0px; margin-top:20px; width:100%;}
-#languageswitcher form select							{ font-size:12pt; font-variant:small-caps; background:url('../../dressprow/images/header-bg.gif') repeat-x; border-width:1px; border-style:solid; width:100%; padding-left:5px;}
+#languageswitcher form select							{ font-size:12pt; background:url('../../dressprow/images/header-bg.gif') repeat-x; border-width:1px; border-style:solid; width:100%; padding-left:5px;}
 
 
 /******************************* 13. FOOTER */
@@ -2071,8 +2088,7 @@ TABLE OF CONTENT
 
 
 #menuTop ul ul li a:hover, #login:hover, 
-a.reset:hover, a.action-button:hover, 
-input.action-button:hover, #logout:hover            { color:#000 !important;}
+a.reset:hover, #logout:hover            { color:#000 !important;}
 
 body, .button a, div.accordion tr td.listingname a, 
 .button a:hover, tr .listingelement a.button,
@@ -2083,30 +2099,34 @@ div.accordion tr .listingname a.listingname:hover,
 .dashboard_button a,.dashboard_button a:hover,
 .minitabs #webblertabs ul li a:hover                { color:#333;}
 
+a.button                                            { color:#333 !important}
+
 h1, h2, h3, h4, h5, h6, div.dropButton a,   
 .ui-dialog-content, .gray, #webblertabs ul li a, 
 .panel table th, a.reset, .note, a.confirm,
-.configForm legend,  #globalhelp .content .text     { color:#666;}
+#globalhelp .content .text                          { color:#666;}
 
 #login, #logout, .pagetitle                         { color:#AAA;}
 
 #menuTop ul ul li a, #globalhelp .buttonhelp, 
 .firstinstallbutton                                 { color:#EEE !important;}
 
+.configForm legend                                  { color:#f4f4f4}
+
 #sendtabs ul.sendcampaign li a, #menuTop ul li a,  
 #menuTop ul li a:hover, #menuTop ul li:hover,
-.panel .step-nav a.next:hover, a.action-button,
+.panel .step-nav a.next:hover,
 #sendtabs ul.sendcampaign li.current a,
-input.action-button, div.messageactions a, 
+.action-button, div.messageactions a, 
 .panel .step-nav a.next, .panel .step-nav a.back,
-.ui-tabs-panel h3,
+.ui-tabs-panel h3,#addtoqueuebutton:hover,
 .minitabs #webblertabs ul li.current a              { color:#FFF !important;}
 
 a:active, #addtoqueue .missing, #addtoqueue .error  { color:red;}
 
 a, div.accordion table td a, tr td.listingname a,
-tr td.listingelement a, .block ul li a, li.shade0 a,
-.ui-widget-content a                                { color:#22769D;}
+tr td.listingelement a, .ui-widget-content a,
+.block ul li a, li.shade0 a                         { color:#22769D;}
 
 .block ul li a:hover, #webblertabs ul li a:hover, 
 div.dropButton .submenu a:hover, li.shade0 a:hover,
@@ -2114,6 +2134,12 @@ tr td.listingname a:hover, a:hover,
 tr td.listingelement a:hover, 
 div.accordion table td a:hover                      { color:#F93;}
 
+#listselection li label:before                      {color: #13d80e;}
+
+#excludelist1 li input[type='checkbox']:checked + label:before,
+#excludelist2 li input[type='checkbox']:checked + label:before,
+#targetlist2 li input[type='checkbox']:checked + label:before,
+#targetlist1 li input[type='checkbox']:checked + label:before { color: #11c10d;}
 
 
 /******************************* 2. BACKGROUND */
@@ -2127,42 +2153,55 @@ a.confirm, .ui-dialog .ui-dialog-titlebar-close,
 a.reset, h3.ui-accordion-header a, .configcontent,
 .ui-dialog .ui-dialog-titlebar-close:hover,
 .dbcheck #content table td table td,
-.block ul li a:hover, div.configEdit a.ajaxable     { background-color:#FFF;}
+.block ul li a:hover, div.configEdit a.ajaxable,
+#listselection li label:before                      { background-color:#FFF;}
 
 
 #generatetextversion a.ajaxable, .row.odd, 
 table.userAdd tr td, .ui-dialog-content textarea,  
-body.attributes #new-attribute, .configForm legend,   
+body.attributes #new-attribute, #messagefilterform,
 .row1, #globalhelp .content .text, form#login-form,
 table.bounceActions tr td, .ui-dialog-content input, 
 div.accordion tr td.listingname a,span.add_member:hover,
 span.delete a.confirm:hover,span.send-list a.button:hover,
 .block ul li a, li.shade0 a, .dashboard_button a,
-span.edit-list a.button:hover, #messagefilterform   { background-color:#EEE;}
+span.edit-list a.button:hover                       { background-color:#f4f4f4;}
 
-.shade1, .shade2, span.marksent a.button:hover,
-div.panel, span.delete a.button:hover, 
+#listselection li label                             { background-color:#f5f5f5}
+
+#listselection li label:hover                       { background-color: #e9f8fc;}
+
+#listselection li input[type='checkbox']:checked + label{ background-color: #daf2fa;}
+
+#addtoqueuebutton                                   { background-color: #80aa0f !important;}
+#addtoqueuebutton:hover                             {background-color: #98cb12 !important;}
+
+.shade1, .shade2,.menutableright h3                 { background-color:#eaeaea;}
+
+div.panel                                           { background-color:#eee}
+
+.action-button:hover                                { background-color:#CCC}
+
+span.marksent a.button:hover, span.delete a.button:hover, 
 span.edit a.button:hover, span.view a.button:hover, 
 span.suspend a.button:hover, .rowtotal, .ui-dialog, 
-span.resend a.button:hover, .panel table th,
-span.stats a.button:hover, a.action-button:hover,
-input.action-button:hover, .menutableright h3,
+span.resend a.button:hover, .panel table th,.ui-tabs-nav,
+span.stats a.button:hover, span.edit-list a.button,
 #languageswitcher form select,span.add_member,
-span.delete a.confirm,span.send-list a.button,
-span.edit-list a.button                             { background-color:#DDD;}
+span.delete a.confirm,span.send-list a.button       { background-color:#DDD;}
 
-#menuTop ul ul li a:hover, #login:hover, 
-#logout:hover                                       { background-color:#AAA !important;}
+#menuTop ul ul li a:hover,#login:hover,#logout:hover{ background-color:#AAA !important;}
 
 #navigation,#sendtabs ul.sendcampaign li a, 
 .firstinstallbutton,.ui-tabs-panel h3               { background-color:#888;}
 
-#globalhelp .buttonhelp, .panel .step-nav a.next, 
-.panel .step-nav a.back                             { background-color:#666;}
+.configForm legend                                  { background-color:#777;}
 
-span#menu-button span:hover,a.action-button,
-#menuTop ul ul li, #menuTop ul li:hover, #logout,    
-input.action-button                                 { background-color:#444;}
+#globalhelp .buttonhelp, .panel .step-nav a.next, 
+.panel .step-nav a.back,.action-button             { background-color:#999;}
+
+span#menu-button span:hover,
+#menuTop ul ul li, #menuTop ul li:hover, #logout    { background-color:#444;}
 
 #menuTop ul li a:hover                              { background-color:#444 !important;}
 
@@ -2176,11 +2215,11 @@ div.accordion tr .listingname a.listingname:hover,
 
 .panel .step-nav a.back:hover, 
 .panel .step-nav a.next:hover,
-.minitabs #webblertabs ul li.current                       { background-color:#F93}
+.minitabs #webblertabs ul li.current                { background-color:#F93}
 
 #sendtabs ul li.current a,
 #sendtabs ul.sendcampaign li.current a, 
-div.messageactions a,  #sendtabs ul li a:hover      { background-color:#22769D;}
+div.messageactions a, #sendtabs ul li a:hover      { background-color:#22769D;}
 
 a.reset, a.confirm									{ background-image:-moz-linear-gradient(top, rgba(255, 255, 255, .2) 0%, rgba(150, 150, 150, .2) 100%); background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255, 255, 255, .2)), color-stop(100%,rgba(150, 150, 150, .2))); background-image:-webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0%,rgba(150, 150, 150, .2) 100%); background-image:-o-linear-gradient(top, rgba(255, 255, 255, .2) 0%,rgba(150, 150, 150, .2) 100%); background-image:-ms-linear-gradient(top, rgba(255, 255, 255, .2) 0%,rgba(150, 150, 150, .2) 100%); background-image:linear-gradient(top, rgba(255, 255, 255, .2) 0%,rgba(150, 150, 150, .2) 100%);}
 
@@ -2201,22 +2240,22 @@ body.attributes hr, body.attributes #new-attribute,
 
 .minitabs #webblertabs ul li                        { border-color:#BBB}
 
-div.panel, div.panel .content, #addtoqueue, hr,   
-form#login-form, form#forgotpassword-form, 
-a.reset, a.confirm,#messagefilterform               { border-color:#CCC;}
+div.panel,hr,.block,form#login-form, 
+form#forgotpassword-form, a.reset, a.confirm,
+#messagefilterform,  div.configEdit a.ajaxable,
+.minitabs #webblertabs ul li.current, #login,
+#logout, #listselection li label:before             { border-color:#CCC;}
 
 .dbcheck #content table td table td, 
-.panel table td, .panel table th                    { border-color:#DDD;}
+.panel table td, .panel table th,.shade1,.shade2    { border-color:#DDD;}
 
-#globalhelp .content .text,.ui-dialog,  
-#webblertabs, .configForm fieldset, 
-.configForm legend, div.dropButton                  { border-color:#999;}
+#globalhelp .content .text,.ui-dialog,#webblertabs,   
+.configForm fieldset,.configForm legend,  
+div.dropButton,#listselection .tabbed               { border-color:#EEE;}
 
 #login:hover, #logout:hover                         { border-color:#777;}
 
-#login, #logout, .block, .panel .step-nav a.next,
-.panel .step-nav a.back,div.configEdit a.ajaxable,
-.minitabs #webblertabs ul li.current                { border-color:#666;}
+.panel .step-nav a.next,.panel .step-nav a.back     { border-color:#999}
 
 #addtoqueue .missing, .note                         { border-color:#FDD845;}
 
@@ -2255,6 +2294,8 @@ a.reset, a.confirm                                  { text-shadow:0 1px rgba(255
 
 div.configEdit a.ajaxable                           { -moz-box-shadow: inset 0px 0px 6px #666; -webkit-box-shadow: inset 0px 0px 6px #666; box-shadow: inset 0px 0px 6px #666;}
 
+#listselection li label:before                      { -moz-box-shadow: inset 0px 0px 6px #EEE; -webkit-box-shadow: inset 0px 0px 6px #EEE; box-shadow: inset 0px 0px 6px #EEE;}
+
 .shadow, #right-bar ul, #right-bar h3			    { -moz-box-shadow:1px 2px 6px #999; -webkit-box-shadow:1px 2px 6px #999; box-shadow:1px 2px 6px #999;}
 
 div.accordion tr td.listingname a,span.add_member, 
@@ -2266,7 +2307,7 @@ div.dropButton, #webblertabs                        { -moz-box-shadow:inset 0 0 
 
 .paging .controls a:hover							{ -moz-box-shadow:0px 0px 0px #888; -webkit-box-shadow:0px 0px 0px #888; box-shadow:0px 0px 0px #888;}
 
-a.action-button, input.action-button                { -moz-box-shadow:1px 1px 4px #000; -webkit-box-shadow:1px 1px 4px #000; box-shadow:1px 1px 4px #000;}
+.action-button                                      { -moz-box-shadow:1px 1px 4px #000; -webkit-box-shadow:1px 1px 4px #000; box-shadow:1px 1px 4px #000;}
 
 .panel .step-nav a.back:hover,
 .panel .step-nav a.next:hover,
