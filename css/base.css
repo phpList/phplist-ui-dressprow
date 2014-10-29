@@ -41,7 +41,7 @@
 	  margin: 5px 10px 5px 0px;
 	  line-height: normal;
 	  padding: 8px 10px;
-	  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+	  font-family: Arial, Helvetica, sans-serif; }
 
 	.button:hover,
 	button:hover,
@@ -185,7 +185,7 @@
 		-moz-border-radius: 2px;
 		-webkit-border-radius: 2px;
 		border-radius: 2px;
-		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 13px Arial, Helvetica, sans-serif;
 		color: #777;
 		margin: 0;
 		width: 210px;
