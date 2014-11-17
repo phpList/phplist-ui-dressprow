@@ -9,10 +9,10 @@ This theme uses Grunt in order to automate tasks.
 
 ## Installation
 ### Node.js
-@TODO: Add set up instructions.
+[how to install node.js and npm (node package manager)](http://www.joyent.com/blog/installing-node-and-npm/)
 
 ### Grunt
-@TODO: Add set up instructions.
+[Getting started with grunt](http://gruntjs.com/getting-started)
 
 ## Usage
 ### Set up the project
