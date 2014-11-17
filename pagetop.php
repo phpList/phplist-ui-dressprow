@@ -8,6 +8,8 @@
   Michiel Dethmers, phpList Ltd 2003 - 2013
   * 
 */
+
+include('includes/template.php');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $_SESSION['adminlanguage']['iso']?>" lang="<?php echo $_SESSION['adminlanguage']['iso']?>" dir="<?php echo $_SESSION['adminlanguage']['dir']?>">
@@ -24,24 +26,7 @@
 <link rel="SHORTCUT ICON" id="favicon" href="./images/phplist.ico" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<!-- initial styles and JS from basic application -->
-<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui-1.8.1.all.min.js"></script>
-<script type="text/javascript" src="js/jquery.tools.scrollable.js"></script>
-<script language="Javascript" type="text/javascript" src="js/phplistapp.js"></script>
-<link rel="stylesheet" href="css/reset.css" />
-<link href="css/jquery-ui-1.8.1.all.css" rel="stylesheet" type="text/css"/>
-<link rel="stylesheet" href="css/app.css" />
-<link rel="stylesheet" href="css/menu.css" />
-
-<!-- now override the above with the styles and JS from the UI theme -->
-<script language="Javascript" type="text/javascript" src="ui/dressprow/js/jquery.tablednd.js"></script>
-<script language="Javascript" type="text/javascript" src="ui/dressprow/js/phplist.js"></script>
-<link rel="stylesheet" href="ui/dressprow/css/base.css" />
-<link rel="stylesheet" href="ui/dressprow/css/layout.css" />
-<link rel="stylesheet" href="ui/dressprow/css/skeleton.css" />
-<link rel="stylesheet" href="ui/dressprow/css/style.css" />
-<link rel="stylesheet" href="ui/dressprow/css/gray.css" />
+<?php print $styles; // css in the header and js at the end of body.?>
 
 <!-- Style for rtl language <link rel="stylesheet" href="ui/dressprow/css/style_rtl.css" /> -->
 

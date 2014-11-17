@@ -1,0 +1,23 @@
+{
+  "name": "dressprow",
+  "version": "0.0.0",
+  "description": "The default UI theme for phplist: The most popular open source newsletter manager.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phpList/phplist-ui-dressprow"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/phpList/phplist-ui-dressprow/issues"
+  },
+  "homepage": "www.phplist.com",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-contrib-cssmin": "~0.10.0",
+    "grunt-contrib-copy": "~0.7.0",
+    "grunt-contrib-watch": "~0.6.0"
+  }
+}
