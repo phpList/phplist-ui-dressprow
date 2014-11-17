@@ -8,10 +8,10 @@ Getting started
 This theme uses Grunt in order to automate tasks.
 
 ## Installation
-### Node.js
+#### Node.js
 [how to install node.js and npm (node package manager)](http://www.joyent.com/blog/installing-node-and-npm/)
 
-### Grunt
+#### Grunt
 [Getting started with grunt](http://gruntjs.com/getting-started)
 
 ## Usage
