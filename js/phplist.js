@@ -1,4 +1,4 @@
-/************ MENU tarekdj**************/
+
 var menuArrowsrc = 'ui/dressprow/images/menuarrow.png';
 var menuArrowActivesrc = 'ui/dressprow/images/menuarrow_active.png';
 
