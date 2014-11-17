@@ -27,8 +27,6 @@ include('includes/template.php');
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 <?php print $styles; // css in the header and js at the end of body.?>
-<?php print $scripts; // css in the header and js at the end of body.?>
-
 
 <!-- Style for rtl language <link rel="stylesheet" href="ui/dressprow/css/style_rtl.css" /> -->
 

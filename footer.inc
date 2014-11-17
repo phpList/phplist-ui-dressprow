@@ -27,5 +27,5 @@
         </div>
     </div>
 </div>
-<?php //print $scripts; ?>
+<?php print $scripts; ?>
 
