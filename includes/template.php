@@ -1,8 +1,8 @@
 <?php
 
-function print_styles($styles_path, $minified = false) {
+function print_styles($styles_path) {
   $output = ''; 
-  if(!$minified) {
+  if(!USE_MINIFIED_ASSETS) {
     foreach($styles_path['css'] as $style) {
       $output .= "<link rel='stylesheet' href='$style' />\n";
     }
@@ -16,9 +16,9 @@ function print_styles($styles_path, $minified = false) {
   return $output;
 }
 
-function print_scripts($scripts_path, $minified = false) {
+function print_scripts($scripts_path) {
   $output = '';
-  if(!$minified) {
+  if(!USE_MINIFIED_ASSETS) {
     foreach($scripts_path['js'] as $script) {
       $output .= "<script language='Javascript' type='text/javascript' src='$script'></script>\n";
     }
@@ -47,7 +47,7 @@ $styles_path = array(
 	'ui/dressprow/css/gray.css',
   ),
   'min' => array( //ui/dressprow/css/all.min.css?v=<?php echo filemtime(dirname(__FILE__).'/css/all.min.css');
-    'ui/dressprow/css/all.min.css',
+    'ui/dressprow/css/dressprow.all.min.css',
   ),
 );
 
@@ -65,9 +65,9 @@ $scripts_path = array(
 
   ),
   'min' => array(
-    'ui/dressprow/js/all.min.js',
+    'ui/dressprow/js/dressprow.all.min.js',
   ),
 );
 
-$styles = print_styles($styles_path, USE_MINIFIED_ASSETS);
+$styles = print_styles($styles_path);
 $scripts = print_scripts($scripts_path);
