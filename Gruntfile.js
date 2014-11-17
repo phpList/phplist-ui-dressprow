@@ -74,5 +74,4 @@ watch: {
 
   grunt.registerTask('build', ['concat', 'uglify', 'cssmin']);
   grunt.registerTask('default', ['concat', 'uglify', 'cssmin']);
-  //grunt.registerTask('watch', ['watch']);
 };
