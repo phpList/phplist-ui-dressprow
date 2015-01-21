@@ -1590,6 +1590,7 @@ div.panel .content										{ border-width:1px; border-style:solid; padding:5px;
 .ui-dialog-content .panel								{ background:none; border:none;}
 .ui-dialog-content form,
 .ui-dialog-content .panel .content						{ border:none;}
+.ui-resizable-s,.ui-resizable-sw                        { bottom:0px}
 
 
 /******************************* 6. MAIN MENU */
