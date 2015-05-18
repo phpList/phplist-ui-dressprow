@@ -195,9 +195,9 @@ div.dropButton .submenu a:hover							{ border-width:1px; border-style:solid;}
 .minitabs #webblertabs ul li a span                     {margin:0px;padding:2px 0px}
 
 /* send tabs */
-.sendtabs_container										{ width:100%; text-align:center; margin-bottom:-2px !important}
-.sendtabs_container .nexttab							{ cursor:pointer; float:right; padding:5px; margin-top:10px}
-.sendtabs_container .prevtab							{ cursor:pointer; float:left; padding:5px; margin-top:10px}
+.sendtabs_container										{ width:100%; text-align:center; margin-bottom:-2px !important;max-height:50px;}
+.sendtabs_container .nexttab							{ cursor:pointer; float:right; padding:5px; margin-top:10px;vertical-align: top;height:15px}
+.sendtabs_container .prevtab							{ cursor:pointer; float:left; padding:5px; margin-top:10px;vertical-align: top;height:15px}
 .sendtabs_container .prevtab.disabled,				
 .sendtabs_container .nexttab.disabled					{ visibility:hidden;}
 #sendtabs ul.sendcampaign li							{ width:auto !important; margin:1px;}
