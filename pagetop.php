@@ -26,15 +26,15 @@
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.1.all.min.js"></script>
 <script type="text/javascript" src="js/jquery.tools.scrollable.js"></script>
-<script language="Javascript" type="text/javascript" src="js/phplistapp.js"></script>
+<script type="text/javascript" src="js/phplistapp.js"></script>
 <link rel="stylesheet" href="css/reset.css" />
 <link href="css/jquery-ui-1.8.1.all.css" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" href="css/app.css" />
 <link rel="stylesheet" href="css/menu.css" />
 
 <!-- now override the above with the styles and JS from the UI theme -->
-<script language="Javascript" type="text/javascript" src="ui/dressprow/js/jquery.tablednd.js"></script>
-<script language="Javascript" type="text/javascript" src="ui/dressprow/js/phplist.js"></script>
+<script type="text/javascript" src="ui/dressprow/js/jquery.tablednd.js"></script>
+<script type="text/javascript" src="ui/dressprow/js/phplist.js"></script>
 <link rel="stylesheet" href="ui/dressprow/css/base.css" />
 <link rel="stylesheet" href="ui/dressprow/css/layout.css" />
 <link rel="stylesheet" href="ui/dressprow/css/skeleton.css" />
