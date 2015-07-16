@@ -19,6 +19,7 @@
 <head>
 <meta http-equiv="pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+<meta name="License" content="GNU Affero General Public License, http://www.gnu.org/licenses/agpl.html" />
 <meta name="Powered-By" content="phplist version <?php echo VERSION?>" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head><body>
