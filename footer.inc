@@ -23,7 +23,7 @@
             <a target="_blank" href="http://phplist.com">&copy; phpList ltd.</a> - v<?php echo VERSION?>
         <div class="right">
             <a target="_blank" href="http://resources.phplist.com">Resources</a>&nbsp; |  
-            <a target="_blank" href="http://www.twitter.com/phplist"><img src="ui/dressprow/images/twitter.png" /></a>
+            <a target="_blank" href="http://www.twitter.com/phplist"><img src="ui/dressprow/images/twitter.png" alt="phpList twitter" /></a>
         </div>
     </div>
 </div>

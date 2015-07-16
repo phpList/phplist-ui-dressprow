@@ -2,10 +2,10 @@
 /*
   We request you retain the full headers below including the links.
   This not only gives respect to the large amount of time given freely
-  by the developers  but also helps build interest, traffic and use of
-  PHPlist, which is beneficial to it's future development.
+  by the developers, but also helps build interest, traffic and use of
+  phpList, which is beneficial to it's future development.
 
-  Michiel Dethmers, phpList Ltd 2003 - 2012
+  Michiel Dethmers, phpList Ltd 2003 - 2015
 */
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
