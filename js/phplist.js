@@ -214,6 +214,30 @@ $(document).ready(function() {
                 $(this).prepend(cbx);
             });
             $('li input[type=checkbox]').hide();
+
+            // Custom code to add functionality to tick all the boxes in a category.
+            $(selector).on('change', function(){
+              if($(this).find('input[type=checkbox]').attr('id').match('all-lists')) {
+                var ul = $(this).parent();
+                var lists = ul.parent().find('li');
+
+                checkAllBoxes(lists.find('input[id^=all-lists]').prop('checked'), lists);
+              }
+            });
+
         }
+
+        // Function to check/ uncheck all the boxes in a category.
+function checkAllBoxes(checked, checkboxes) {
+  checkboxes.each(function(){
+    if (checked) {
+      $(this).find('input[id^=targetlist]').prop('checked', true);
+    }
+    else {
+      $(this).find('input[id^=targetlist]').prop('checked', false);
+        }
+  });
+}
+
 
 });
