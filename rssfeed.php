@@ -5,7 +5,8 @@ if (isset($_GET['page']) && !empty($_SESSION['adminloggedin'])) {
   include dirname(__FILE__).'/onyx-rss.php';
   $rss = new ONYX_RSS();
   $rss->setDebugMode(false);
-  $rss->setCachePath('/tmp');
+  $rss->setCachePath($GLOBALS['tmpdir']);
+  $rss->setExpiryTime(1440);
   $parseresult = $rss->parse('https://www.phplist.org/newslist/feed/',"phplistnews");
   if ($parseresult) {
     while ($item = $rss->getNextItem()) {
