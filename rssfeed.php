@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_GET['page']) && !empty($_SESSION['adminloggedin'])) {
+if (isset($_GET['page']) && !empty($_SESSION['adminloggedin']) && in_array($_GET['page'],array('home','about','dashboard','community')) ) {
   $news = '';
   include dirname(__FILE__).'/onyx-rss.php';
   $rss = new ONYX_RSS();
@@ -14,6 +14,9 @@ if (isset($_GET['page']) && !empty($_SESSION['adminloggedin'])) {
       $date = str_replace('00:00:00 +0000','',$date);
       $date = str_replace('00:00:00 +0100','',$date);
       $date = str_replace('+0000','',$date);
+      if (preg_match('/\d+:\d+:\d+/',$date,$regs)) {
+          $date = str_replace($regs[0],'',$date);
+      }
       
       ## remove the '<p>&nbsp;</p>' in the descriptions
       $desc = $item['description'];
@@ -21,18 +24,16 @@ if (isset($_GET['page']) && !empty($_SESSION['adminloggedin'])) {
       $desc = '';
        
       $news .= '<li>
-      <h3 class="entry-title"><span class="updated published">'.$date.'</span> <a href="'.$item['link'].'?utm_source=phplist-'.VERSION.'&utm_medium=newspanel&utm_content='.urlencode($item['title']).'&utm_campaign=newspanel" target="_blank">'.$item['title'].'</a></h3>
-      
+      <span class="published">'.$date.'</span> <a href="'.$item['link'].'?utm_source=phplist-'.VERSION.'&utm_medium=newspanel&utm_content='.urlencode($item['title']).'&utm_campaign=newspanel" target="_blank">'.$item['title'].'</a>
       '.$desc.'
       </li>';
-   #   var_dump($item);
     }
   }
 
   if (!empty($news)) {
   print '<div id="newsfeed" class="menutableright block">';
   print '
-       <h3>phpList Hosted news</h3>
+       <h3>'.s('phpList community news').'</h3>
         <ul>'.$news.'</ul>';
   print '</div>';
   
