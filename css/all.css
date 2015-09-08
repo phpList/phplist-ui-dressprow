@@ -2051,8 +2051,8 @@ body.templates span.button 								{ background-image:none; float:right; margin-
 .menutableright h3										{ margin:0; font-size:12pt; background:url('../../dressprow/images/header-bg.gif') repeat-x; border-bottom-width:1px; border-bottom-style:dotted; padding-left:5px; -webkit-border-top-right-radius:6px; -webkit-border-top-left-radius:6px; -moz-border-radius-topright:6px; -moz-border-radius-topleft:6px; border-top-right-radius:6px; border-top-left-radius:6px;}
 #languageswitcher										{ float:right; margin:0px; margin-top:20px; width:100%;}
 #languageswitcher form select							{ font-size:12pt; background:url('../../dressprow/images/header-bg.gif') repeat-x; border-width:1px; border-style:solid; width:100%; padding-left:5px;}
-
-
+#newsfeed ul                                            { text-align: center; }
+.publisheddate                                          { margin-top: 0px; padding-top: 3px; }
 /******************************* 13. FOOTER */
 
 #footer													{ border-top-width:1px; border-top-style:dotted; margin-top:40px; height:30px; padding:7px;}
