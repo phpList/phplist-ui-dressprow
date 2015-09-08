@@ -24,7 +24,7 @@ if (isset($_GET['page']) && !empty($_SESSION['adminloggedin']) && in_array($_GET
       $desc = '';
        
       $news .= '<li>
-      <span class="published">'.$date.'</span> <a href="'.$item['link'].'?utm_source=phplist-'.VERSION.'&utm_medium=newspanel&utm_content='.urlencode($item['title']).'&utm_campaign=newspanel" target="_blank">'.$item['title'].'</a>
+      <div class="publisheddate">'.$date.'</div> <a href="'.$item['link'].'?utm_source=phplist-'.VERSION.'&utm_medium=newspanel&utm_content='.urlencode($item['title']).'&utm_campaign=newspanel" target="_blank">'.$item['title'].'</a>
       '.$desc.'
       </li>';
     }
