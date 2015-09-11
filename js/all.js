@@ -1166,11 +1166,15 @@ $(document).ready(function() {
     $(this).parents('.note').hide();
   });
 
-  $(".configurelink").click(function() {
-   // alert(this.href);
-    $("#configurecontent").load('./?page=ajaxcall&action=test');
-    $("#configurecontent").show();
-    return false;
+  $(".dontsavebutton").click(function() {
+     item = $(this).attr('id');
+     item = item.replace(/dontsave/,''); 
+     // alert(item);
+     
+     // it would be nicer to restore the original content, but that
+     // would takes a while to accomplish
+     $("#"+item).html('<strong>editing cancelled</strong>');
+     console.log($("#"+item).html());
   });
 
   $("a.ajaxable").click(function() {
@@ -1415,7 +1419,6 @@ $(document).ready(function() {
         checkAllBoxes(lists.find('input[id^=all-lists]').prop('checked'), lists);
       }
     });
-
 
 
 /* future dev
