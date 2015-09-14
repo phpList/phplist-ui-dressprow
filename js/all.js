@@ -1174,7 +1174,7 @@ $(document).ready(function() {
      // it would be nicer to restore the original content, but that
      // would takes a while to accomplish
      $("#"+item).html('<strong>editing cancelled</strong>');
-     console.log($("#"+item).html());
+    // console.log($("#"+item).html());
   });
 
   $("a.ajaxable").click(function() {
