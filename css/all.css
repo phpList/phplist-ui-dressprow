@@ -1,5 +1,5 @@
 
-/*css/reset.css*/ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,dialog,div,dl,dt,em,embed,fieldset,figcaption,figure,font,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,hr,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,meter,nav,object,ol,output,p,pre,progress,q,rp,rt,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video,xmp{border:0;font-size:100%;margin:0;padding:0}html,body{height:100%}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}b,strong{font-weight:bold}img{font-size:0;vertical-align:middle;-ms-interpolation-mode:bicubic}li{display:list-item}table{border-collapse:collapse;border-spacing:0}th,td,caption{font-weight:normal;vertical-align:top;text-align:left}svg{overflow:hidden}
+/*phpList3/public_html/lists/admin/css/reset.css*/ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,dialog,div,dl,dt,em,embed,fieldset,figcaption,figure,font,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,hr,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,meter,nav,object,ol,output,p,pre,progress,q,rp,rt,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video,xmp{border:0;font-size:100%;margin:0;padding:0}html,body{height:100%}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}b,strong{font-weight:bold}img{font-size:0;vertical-align:middle;-ms-interpolation-mode:bicubic}li{display:list-item}table{border-collapse:collapse;border-spacing:0}th,td,caption{font-weight:normal;vertical-align:top;text-align:left}svg{overflow:hidden}
 
 /* =------------------------------------------------------------------------
 Clearfix
@@ -10,7 +10,7 @@ Clearfix
 .clearfix {display: inline-block}
 
 
-/*css/jquery-ui-1.8.1.all.css*/ /*
+/*phpList3/public_html/lists/admin/css/jquery-ui-1.8.1.all.css*/ /*
 * jQuery UI CSS Framework
 * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
 * Dual licensed under the MIT (MIT-LICENSE.txt) and GPL (GPL-LICENSE.txt) licenses.
@@ -496,7 +496,7 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
 ----------------------------------*/
 .ui-progressbar { height:2em; text-align: left; }
 .ui-progressbar .ui-progressbar-value {margin: -1px; height:100%; }
-/*css/app.css*/ /*
+/*phpList3/public_html/lists/admin/css/app.css*/ /*
 
 styles for the functionality. No styling/colours
 
@@ -726,7 +726,7 @@ div.plugindetails > div.detail > span.value {
   border: 1px solid white;
 }
 
-/*css/menu.css*/ /* CSS Menus - Horizontal CSS Menu with Dropdown and Popout Menus - 20050131 */
+/*phpList3/public_html/lists/admin/css/menu.css*/ /* CSS Menus - Horizontal CSS Menu with Dropdown and Popout Menus - 20050131 */
 
 /* Begin CSS Popout Menu */
 #menuTop {
@@ -847,7 +847,7 @@ color:#060;
 /* End CSS Popout Menu */
 
 
-/*ui/dressprow/css/base.css*/ /*
+/*phpList3/public_html/lists/admin/ui/dressprow/css/base.css*/ /*
 * Skeleton V1.1
 * Copyright 2011, Dave Gamache
 * www.getskeleton.com
@@ -1078,7 +1078,7 @@ color:#060;
   .hidden { display: none; }
 
 
-/*ui/dressprow/css/layout.css*/ /*
+/*phpList3/public_html/lists/admin/ui/dressprow/css/layout.css*/ /*
 * Skeleton V1.1
 * Copyright 2011, Dave Gamache
 * www.getskeleton.com
@@ -1141,7 +1141,7 @@ color:#060;
 	    font-weight: normal;
 	    font-style: normal; }
 */
-/*ui/dressprow/css/skeleton.css*/ /*
+/*phpList3/public_html/lists/admin/ui/dressprow/css/skeleton.css*/ /*
 * Skeleton V1.1
 * Copyright 2011, Dave Gamache
 * www.getskeleton.com
@@ -1476,7 +1476,7 @@ border-bottom:1px dotted #ccc;
       height: 0;
     }
 
-/*ui/dressprow/css/style.css*/ /* File:/lists/admin/ui/dressprow/css/style.css */
+/*phpList3/public_html/lists/admin/ui/dressprow/css/style.css*/ /* File:/lists/admin/ui/dressprow/css/style.css */
 
 /******************************* 
 
@@ -1688,6 +1688,7 @@ div.dropButton .submenu a:hover							{ border-width:1px; border-style:solid}
 .sendtabs_container .prevtab:hover, 
 .sendtabs_container .nexttab:hover						{ zoom:1; filter:alpha(opacity=70); opacity:0.7}
 ul.sendcampaign											{ list-style: none}
+#metadata                                               { margin-bottom:20px }
 
 
 /******************************* 9. LISTINGS [paging, table styles, drag and drop] */
@@ -2065,7 +2066,7 @@ body.templates span.button 								{ background-image:none; float:right; margin-
 
 /* End of /lists/admin/ui/dressprow/css/style.css */
 
-/*ui/dressprow/css/gray.css*/ /* File:/lists/admin/ui/dressprow/css/gray.css */
+/*phpList3/public_html/lists/admin/ui/dressprow/css/gray.css*/ /* File:/lists/admin/ui/dressprow/css/gray.css */
 
 
 /******************************* 
