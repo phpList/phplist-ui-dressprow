@@ -2,6 +2,7 @@
     </div> <!-- end #content -->
 
     <div id="right-bar" class="grid_4 four columns">
+    <?php echo $firstInstallButton?>
         <div id="context-menu" class="menutableright block">
             <h3>Navigation</h3>
             <?php print contextMenu(); ?>
