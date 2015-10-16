@@ -66,6 +66,13 @@ p,dl,h1,h2,h4,h5,h6,ol,pre,table,address,fieldset,figure{ margin-bottom:20px}
 form .actions											{ border:0px}
 div.submit, p.button									{ margin:10px 0px}
 .shade1, .shade2										{ margin-bottom:5px; padding:1px; background:url("../../dressprow/images/header-bg.gif") repeat-x scroll 0 0}
+.show-on-mobile                                         {display:none}
+
+@media only screen and (max-width: 767px){
+    .url                                                {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;display: inline-block;max-width: 170px}
+    .hide-on-mobile                                     {display:none}
+    .show-on-mobile                                     {display:inherit}
+}
 
 
 /******************************* 2. STRUCTURE DIVS */
