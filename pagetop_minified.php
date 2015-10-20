@@ -24,9 +24,9 @@
 
 <?php
 if (isset($GLOBALS['config']['head'])) {
-  foreach ($GLOBALS['config']['head'] as $sHtml) {
-    print $sHtml;
-    print "\n";
-    print "\n";
-  }
+    foreach ($GLOBALS['config']['head'] as $sHtml) {
+        print $sHtml;
+        print "\n";
+        print "\n";
+    }
 }
