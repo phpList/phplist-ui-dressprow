@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_GET['page']) && !empty($_SESSION['adminloggedin']) && in_array($_GET['page'], array('home', 'about', 'dashboard', 'community'))) {
+if (isset($_GET['page']) && !empty($_SESSION['adminloggedin']) && in_array($_GET['page'], ['home', 'about', 'dashboard', 'community'])) {
     $news = '';
     include dirname(__FILE__).'/onyx-rss.php';
     $rss = new ONYX_RSS();
