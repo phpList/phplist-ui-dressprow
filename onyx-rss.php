@@ -53,9 +53,10 @@ class ONYX_RSS
 
    // Forward compatibility with PHP v.5
    // http://www.phpvolcano.com/eide/php5.php?page=start
+
    public function __construct()
    {
-       $this->conf = array();
+       $this->conf = [];
        $this->conf['error'] = '<br /><strong>Error on line %s of '.__FILE__.'</strong>: %s<br />';
        $this->conf['cache_path'] = dirname(__FILE__);
        $this->conf['cache_time'] = 180;
@@ -83,15 +84,15 @@ class ONYX_RSS
 
     public function parse($uri, $file = false, $time = false, $local = false)
     {
-        $this->rss = array();
+        $this->rss = [];
         $this->rss['cache_age'] = 0;
         $this->rss['current_tag'] = '';
         $this->rss['index'] = 0;
         $this->rss['output_index'] = -1;
-        $this->data = array();
+        $this->data = [];
 
         if ($file) {
-            if (!is_writeable($this->conf['cache_path'])) {
+            if (!is_writable($this->conf['cache_path'])) {
                 $this->raiseError((__LINE__ - 2), ONYX_ERR_NOT_WRITEABLE);
 
                 return false;
@@ -164,6 +165,7 @@ class ONYX_RSS
     }
 
    //private function tag_open($parser, $tag, $attrs)
+
    public function tag_open($parser, $tag, $attrs)
    {
        $this->rss['current_tag'] = $tag = strtolower($tag);
@@ -180,7 +182,7 @@ class ONYX_RSS
          default:
             break;
       }
-       if (sizeof($attrs)) {
+       if (count($attrs)) {
            foreach ($attrs as $k => $v) {
                if (strpos($k, 'xmlns') !== false) {
                    $this->data['namespaces'][$k] = $v;
@@ -190,11 +192,13 @@ class ONYX_RSS
    }
 
    //private function tag_close($parser, $tag){}
+
    public function tag_close($parser, $tag)
    {
    }
 
    //private function cdata($parser, $cdata)
+
    public function cdata($parser, $cdata)
    {
        if (strlen(trim($cdata)) && $cdata != "\n") {
@@ -233,8 +237,8 @@ class ONYX_RSS
                 return $this->data['items'];
             }
 
-            $temp = array();
-            for ($i = 0; $i < sizeof($this->data['items']); ++$i) {
+            $temp = [];
+            for ($i = 0; $i < count($this->data['items']); ++$i) {
                 $temp[] = (object) $this->data['items'][$i];
             }
 
@@ -252,7 +256,7 @@ class ONYX_RSS
 
     public function numItems()
     {
-        return sizeof($this->data['items']);
+        return count($this->data['items']);
     }
 
     public function getNextItem($max = false)
@@ -306,6 +310,7 @@ class ONYX_RSS
     }
 
    //private function raiseError($line, $err)
+
    public function raiseError($line, $err)
    {
        if ($this->conf['debug_mode']) {
@@ -336,6 +341,7 @@ class ONYX_RSS
     }
 
    //private function mod_time($uri)
+
    public function mod_time($uri)
    {
        if (function_exists('version_compare') && version_compare(phpversion(), '4.3.0') >= 0) {
@@ -362,7 +368,7 @@ class ONYX_RSS
 
            $req = "HEAD $path HTTP/1.1\r\nUser-Agent: PHP/".phpversion();
            $req .= "\r\nHost: $host\r\nAccept: */*\r\n\r\n";
-           fputs($fp, $req);
+           fwrite($fp, $req);
 
            while (!feof($fp)) {
                $str = fgets($fp, 4096);
