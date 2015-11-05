@@ -56,7 +56,7 @@ class ONYX_RSS
 
    public function __construct()
    {
-       $this->conf = [];
+       $this->conf = array();
        $this->conf['error'] = '<br /><strong>Error on line %s of '.__FILE__.'</strong>: %s<br />';
        $this->conf['cache_path'] = dirname(__FILE__);
        $this->conf['cache_time'] = 180;
