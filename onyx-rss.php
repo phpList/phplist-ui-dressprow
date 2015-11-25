@@ -84,12 +84,12 @@ class ONYX_RSS
 
     public function parse($uri, $file = false, $time = false, $local = false)
     {
-        $this->rss = [];
+        $this->rss = array();
         $this->rss['cache_age'] = 0;
         $this->rss['current_tag'] = '';
         $this->rss['index'] = 0;
         $this->rss['output_index'] = -1;
-        $this->data = [];
+        $this->data = array();
 
         if ($file) {
             if (!is_writable($this->conf['cache_path'])) {
@@ -237,7 +237,7 @@ class ONYX_RSS
                 return $this->data['items'];
             }
 
-            $temp = [];
+            $temp = array();
             for ($i = 0; $i < count($this->data['items']); ++$i) {
                 $temp[] = (object) $this->data['items'][$i];
             }
