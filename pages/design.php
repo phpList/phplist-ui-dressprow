@@ -5,24 +5,27 @@
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Common Text styles</h1>
 <hr />
 <br />
-<h1>Heading 1</h1>
-<h2>Heading 2</h2>
-<h3>Heading 3</h3>
-<h4>Heading 4</h4>
-<h5>Heading 5</h5>
-<h6>Heading 6</h6>
-<p>Paragraph</p>
-<pre>preformatted</pre>
-<p><strong>Bold</strong></p>
-<p><em>Italic</em></p>
-<p><del>Deleted</del></p>
-<p><mark>Highlighted</mark></p>
-<p><u>Underlined</u></p>
+<table style="width:auto;padding:0 10px;margin:0">
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:200px;font-family:monospace" readonly value='<h1>Heading 1</h1>' /></td><td style="padding:0px 20px"><h1>Heading 1</h1></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:200px;font-family:monospace" readonly value='<h2>Heading 2</h2>' /></td><td style="padding:0px 20px"><h2>Heading 2</h2></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:15px"><input type="text" style="max-width:100%;min-width:200px;font-family:monospace" readonly value='<h3>Heading 3</h3>' /></td><td style="padding:0px 20px"><h3>Heading 3</h3></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:200px;font-family:monospace" readonly value='<h4>Heading 4</h4>' /></td><td style="padding:0px 20px"><h4>Heading 4</h4></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:200px;font-family:monospace" readonly value='<h5>Heading 5</h5>' /></td><td style="padding:0px 20px"><h5>Heading 5</h5></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:200px;font-family:monospace" readonly value='<h6>Heading 6</h6>' /></td><td style="padding:5px 20px"><h6>Heading 6</h6></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:200px;font-family:monospace" readonly value='<p>Paragraph</p>' /></td><td style="padding:5px 20px"><p>Paragraph</p></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:200px;font-family:monospace" readonly value='<pre>preformatted</pre>' /></td><td style="padding:5px 20px"><pre>preformatted</pre></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:200px;font-family:monospace" readonly value='<strong>Strong</strong>' /></td><td style="padding:5px 20px"><strong>Strong</strong></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:200px;font-family:monospace" readonly value='<em>Emphasis</em>' /></td><td style="padding:5px 20px"><em>Emphasis</em></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:200px;font-family:monospace" readonly value='<del>Deleted</del>' /></td><td style="padding:5px 20px"><del>Deleted</del></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:200px;font-family:monospace" readonly value='<mark>Highlighted</mark>' /></td><td style="padding:5px 20px"><mark>Highlighted</mark></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:200px;font-family:monospace" readonly value='<ins>Inserted</ins>' /></td><td style="padding:5px 20px"><ins>Inserted</ins></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:200px;font-family:monospace" readonly value='<a href="#">Link</a>' /></td><td style="padding:5px 20px"><a href="javascript:;">Link</a></td></tr>
+</table>
+
 <br /><br />
 <hr />
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Custom text style</h1>
 <hr />
-<br />
 <h1 class="pagetitle">Page title style </h1>
 <h4 class="pagetitle">Page title style </h4>
 <p class="pagetitle">Page title style </p>
@@ -64,6 +67,14 @@
 <hr />
 <br />
 <p>Most of the screens are structured with a div named <mark><code>.panel</code></mark>, including a <mark><code>.header</code></mark> div, a <mark><code>.content</code></mark> div and a <mark><code>.footer</code></mark> div (usually empty).</p>
+<textarea readonly style="resize:none;height:90px;font-family:monospace;padding:15px 15px 0px;overflow:auto;">
+<div class="panel">
+    <div class="header"><h2>The header of the panel</h2></div>
+    <div class="content">The content of the panel</div>
+    <div class="footer">The footer of the panel</div>
+</div>
+</textarea>
+<p>The code above looks like this:</p>
 <div class="panel">
     <div class="header"><h2>The header of the panel</h2></div>
     <div class="content">The content of the panel</div>
@@ -76,7 +87,6 @@
 <hr />
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Helper classes</h1>
 <hr />
-<br />
 <h3>Show & Hide</h3>
 <p>Thare are 3 items in this list below. You can modify your browser window size to see the effect.</p>
 <ul>
@@ -100,48 +110,101 @@ The grey rows of tables has class <code>.row1</code> and the white rows has clas
 <table>
     <thead>
         <tr>
-            <th class="listinghdname"> th class="listinghdname" </th>
-            <th  class="listinghdelement">th class="listinghdelement"</th>
-            <th  class="listinghdelement"> </th>
+            <th class="listinghdname">th .listinghdname</th>
+            <th class="listinghdelement">th .listinghdelement</th>
+            <th class="listinghdelement"> </th>
         </tr>
     </thead>
     <tbody>
         <tr class="row1">
-            <td class="listingrowname">td class="listingrowname"</td>
-            <td class="listingelement">td class="listingelement"</td>
-            <td class="listingelement"><mark> tr class="row1"</mark></td>
+            <td class="listingrowname">td .listingrowname</td>
+            <td class="listingelement">td .listingelement</td>
+            <td class="listingelement"><mark>tr .row1</mark></td>
         </tr>
         <tr class="rowelement ">
-            <td class="listingrowname">td class="listingrowname"</td>
-            <td class="listingelement" >td class="listingelement"</td>
-            <td class="listingelement"><mark> tr class="rowelement"</mark></td>
+            <td class="listingrowname">td .listingrowname</td>
+            <td class="listingelement">td .listingelement</td>
+            <td class="listingelement"><mark>tr .rowelement</mark></td>
         </tr>
     </tbody>
 </table>
 <br />
+This is the code of the table above:
+<textarea readonly style="resize:none;min-height:310px;height:auto !Important;font-family:monospace;width:100%;padding:15px 10px 0px;overflow:auto;">
+<table>
+ <thead>
+   <tr>
+     <th class="listinghdname">th .listinghdname</th>
+     <th class="listinghdelement">th .listinghdelement</th>
+     <th class="listinghdelement"> </th>
+   </tr>
+ </thead>
+ <tbody>
+   <tr class="row1">
+     <td class="listingrowname">td .listingrowname</td>
+     <td class="listingelement">td .listingelement</td>
+     <td class="listingelement"><mark>tr .row1</mark></td>
+   </tr>
+   <tr class="rowelement ">
+     <td class="listingrowname">td .listingrowname</td>
+     <td class="listingelement">td .listingelement</td>
+     <td class="listingelement"><mark>tr .rowelement</mark></td>
+   </tr>
+ </tbody>
+</table>
+</textarea>
 <br /><br />
 <hr />
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">ACCORDION</h1>
 <hr />
 <br />
 
-<p>To use an accordion, creat a div class <mark><code>.accordion</code></mark>. 
-Inside that div add, for each item, a <code>h3 + a</code> with the item title, and a div with the item text. Like this:</p>
-<textarea readonly style="resize:none;height:100px;padding:10px;overflow:hidden">
+<p>To use an accordion, create a div class <mark><code>.accordion</code></mark>. 
+Into that div add, for each item, a <code>&lt;h3&gt;</code> tag and insde a <code>&lt;a&gt;</code> with the item title. And after that add a div with the item text. Like this:</p>
+<textarea readonly style="resize:none;height:100px;font-family:monospace;padding:15px 15px 0px;overflow:auto;">
 <div class="accordion">
-    <h3><a>First item title</a></h3>
-    <div>First item text </div>
-    <h3><a>Second item title</a></h3>
-    <div>Second item text</div>
+  <h3><a href="javascript:;">First item title</a></h3>
+  <div>First item text </div>
+  <h3><a href="javascript:;">Second item title</a></h3>
+  <div>Second item text</div>
 </div>
 </textarea>
 
 The result should look like this:
 <div class="accordion">
-    <h3><a>First item title</a></h3>
-    <div>First item text </div>
-    <h3><a>Second item title</a></h3>
-    <div>Second item text</div>
+  <h3><a href="javascript:;">First item title</a></h3>
+  <div>First item text </div>
+  <h3><a href="javascript:;">Second item title</a></h3>
+  <div>Second item text</div>
+</div>
+<br /><br />
+<hr />
+<h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Menus</h1>
+<hr />
+<br />
+<h5>The <mark>#webblertabs</mark></h5>
+<div id="webblertabs">
+  <ul>
+    <li class="current"><a href="javascript:;"><span class="title">Item 1</span></a></li>
+    <li><a href="javascript:;"><span class="title">Item 2</span></a></li>
+  </ul>
+</div>
+<textarea readonly style="resize:none;height:100px;font-family:monospace;padding:15px 15px 0px;overflow:auto;">
+<div id="webblertabs">
+  <ul>
+    <li class="current"><a href="#"><span class="title">Item 1</span></a></li>
+    <li><a href="#"><span class="title">Item 2</span></a></li>
+  </ul>
+</div>
+</textarea>
+<h6>As an alternative, put a <code>#webblertabs</code> inside a div with the class <mark><code>.minitabs</code></mark> and you will have this:</h6>
+<div class="minitabs">
+<div id="webblertabs">
+  <ul>
+    <li class="current"><a href="javascript:;"><span class="title">Item 1</span></a></li>
+    <li><a href="javascript:;"><span class="title">Item 2</span></a></li>
+  </ul>
+</div>
 </div>
 <br />
 <br /><br />
@@ -149,25 +212,267 @@ The result should look like this:
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Buttons</h1>
 <hr />
 <br />
-<a class="action-button">Class .action-button</a><br />
-<a class="button ">Class .button</a><br />
-<a class="reset ">Class .reset</a><br />
-<table style="width:auto;">
-<tr><td><code>a.hide</code>: </td><td style="padding:5px 10px"> <div style="width:40px;"> <a class="hide"></a></div></td></tr>
-<tr><td><code>a.del</code>: </td><td style="padding:5px 10px"><a class="del"> </a></td></tr>
-<tr><td><code>a.helpdialog</code>: </td><td style="padding:5px 10px"><a class="helpdialog"> </a></td></tr>
-<tr><td><code>span.send-list</code> + <code>a.button</code>: </td><td style="padding:5px 10px"><span class="send-list"><a class="button"> </a></span></td></tr>
-<tr><td><code>span.edit-list</code> + <code>a.button</code>: </td><td style="padding:5px 10px"><span class="edit-list"><a class="button"> </a></span></td></tr>
-<tr><td><code>span.add_member</code> + <code>a.opendialog</code>: </td><td style="padding:5px 10px"><span class="add_member"><a class="opendialog"> </a></span></td></tr>
-<tr><td><code>span.delete</code> + <code>a.confirm</code>: </td><td style="padding:5px 10px"><span class="delete"><a class="confirm"> </a></span></td></tr>
-<tr><td><code>span.view</code> + <code>a.button</code>: </td><td style="padding:5px 10px"><span class="view"><a class="button"> </a></span></td></tr>
-<tr><td><code>span.resend</code> + <code>a.button</code>: </td><td style="padding:5px 10px"><span class="resend"><a class="button"> </a></span></td></tr>
-<tr><td><code>span.edit</code> + <code>a.button</code>: </td><td style="padding:5px 10px"><span class="edit"><a class="button"> </a></span></td></tr>
-<tr><td><code>span.delete</code> + <code>a.button</code>: </td><td style="padding:5px 10px"><span class="delete"><a class="button"> </a></span></td></tr>
-<tr><td><code>span.suspend</code> + <code>a.button</code>: </td><td style="padding:5px 10px"><span class="suspend"><a class="button"> </a></span></td></tr>
-<tr><td><code>span.marksent</code> + <code>a.button</code>: </td><td style="padding:5px 10px"><span class="marksent"><a class="button"> </a></span></td></tr>
+<table style="width:auto;padding:0 10px;margin:0">
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:350px;font-family:monospace" readonly value='<a id="login">Login</a>' /></td><td style="padding:5px 20px"><a id="login" href="javascript:;">Login</a></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:350px;font-family:monospace" readonly value='<a id="logout">Logout</a>' /></td><td style="padding:5px 20px"><a id="logout" href="javascript:;">Logout</a></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:5px"><input type="text" style="max-width:100%;min-width:350px;font-family:monospace" readonly value='<a class="action-button">Action button</a>' /></td><td style="padding:0px 20px"><a class="action-button" href="javascript:;">Action button</a></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:5px"><input type="text" style="max-width:100%;min-width:350px;font-family:monospace" readonly value='<a class="button">Submit button</a>' /></td><td style="padding:5px 20px"><a class="button" href="javascript:;">Submit button</a></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:5px"><input type="text" style="max-width:100%;min-width:350px;font-family:monospace" readonly value='<a class="reset"">Reset button</a>' /></td><td style="padding:0px 20px"><a class="reset" href="javascript:;">Reset button</a></td></tr>
+</table>
+<hr /><br />
+<table style="width:auto;padding:0 10px;margin:0">
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:230px;font-family:monospace" readonly value='<a class="hide"></a>' /></td><td style="padding:10px 25px"><a class="hide" href="javascript:;"></a></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:230px;font-family:monospace" readonly value='<a class="del"></a>' /></td><td style="padding:5px 20px"><a class="del" href="javascript:;"></a></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:230px;font-family:monospace" readonly value='<a class="helpdialog"></a>' /></td><td style="padding:5px 20px"><a class="helpdialog" href="javascript:;"></a></td></tr>
+</table>
+<hr /><br />
+<table style="width:auto;padding:0 10px;margin:0">
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:460px;font-family:monospace" readonly value='<span class="send-list"><a class="button"></a></span>' /></td><td style="padding:0px 15px"><span class="send-list"><a class="button" href="javascript:;"></a></span></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:460px;font-family:monospace" readonly value='<span class="edit-list"><a class="button"></a></span>' /></td><td style="padding:0px 20px"><span class="edit-list"><a class="button" href="javascript:;"></a></span></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:460px;font-family:monospace" readonly value='<span class="add_member"><a class="opendialog"></a></span>' /></td><td style="padding:0px 15px"><span class="add_member"><a class="opendialog" href="javascript:;"></a></span></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:460px;font-family:monospace" readonly value='<span class="delete"><a class="confirm"></a></span>' /></td><td style="padding:0px 10px"><span class="delete"><a class="confirm" href="javascript:;"></a></span></td></tr>
+</table>
+<hr /><br />
+<table style="width:auto;padding:0 10px;margin:0">
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:430px;font-family:monospace" readonly value='<span class="view"><a class="button"></a></span>' /></td><td style="padding:0px 20px"><span class="view"><a class="button" href="javascript:;"></a></span></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:430px;font-family:monospace" readonly value='<span class="resend"><a class="button"></a></span>' /></td><td style="padding:0px 20px"><span class="resend"><a class="button" href="javascript:;"></a></span></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:430px;font-family:monospace" readonly value='<span class="edit"><a class="button"></a></span>' /></td><td style="padding:0px 20px"><span class="edit"><a class="button" href="javascript:;"></a></span></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:430px;font-family:monospace" readonly value='<span class="delete"><a class="button"></a></span>' /></td><td style="padding:0px 20px"><span class="delete"><a class="button" href="javascript:;"></a></span></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:430px;font-family:monospace" readonly value='<span class="suspend"><a class="button"></a></span>' /></td><td style="padding:0px 20px"><span class="suspend"><a class="button" href="javascript:;"></a></span></td></tr>
+<tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:430px;font-family:monospace" readonly value='<span class="marksent"><a class="button"></a></span>' /></td><td style="padding:0px 20px"><span class="marksent"><a class="button" href="javascript:;"></a></span></td></tr>
 </table>
 <br />
+<div class="accordion">
+<h3><a href="javascript:;">The big buttons of the Dashboard</a></h3> 
+<div>
+<p> This buttons only works if they are inside a table inside an accordion. This is a very bad practice, we should modify this soon making a new class named <code>.large-button</code> with all the required attributes to use this large size buttons anywhere.</p>
+<table style="padding:0;margin:0;border:0"><tr class="send-campaign"><td class="listingname"><a href="javascript:;">Campaign</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="send-campaign">
+ <td class="listingname">
+   <a href="#">Campaign</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="manage-campaigns"><td class="listingname"><a href="javascript:;">View</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="manage-campaigns">
+ <td class="listingname">
+    <a href="#">View</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="manage-users"><td class="listingname"><a href="javascript:;">Suscriber</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="manage-users">
+ <td class="listingname">
+   <a href="#">Suscriber</a>
+  </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="view-statistics"><td class="listingname"><a href="javascript:;">Statistics</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="view-statistics">
+ <td class="listingname">
+    <a href="#">Statistics</a>
+  </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="manage-lists"><td class="listingname"><a href="javascript:;">Lists</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="manage-lists">
+ <td class="listingname">
+   <a href="#">Lists</a>
+  </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="list-users"><td class="listingname"><a href="javascript:;">Suscribers</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="list-users">
+ <td class="listingname">
+   <a href="#">Suscribers</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="import-users"><td class="listingname"><a href="javascript:;">Import</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="import-users">
+ <td class="listingname">
+   <a href="#">Import</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="export-users"><td class="listingname"><a href="javascript:;">Export</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="export-users">
+ <td class="listingname">
+   <a href="#">Export</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="reconcileusers"><td class="listingname"><a href="javascript:;">Reconcile</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="reconcileusers">
+ <td class="listingname">
+    <a href="#">Reconcile</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="configure"><td class="listingname"><a href="javascript:;">Configure</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="configure">
+ <td class="listingname">
+    <a href="#">Configure</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="configure-attributes"><td class="listingname"><a href="javascript:;">Attributes</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="configure-attributes">
+ <td class="listingname">
+    <a href="#">Attributes</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="custom-attribute"><td class="listingname"><a href="javascript:;">Attribute</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="custom-attribute">
+ <td class="listingname">
+    <a href="#">Attribute</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="spage"><td class="listingname"><a href="javascript:;">Subscribe page</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="spage">
+ <td class="listingname">
+    <a href="#">Subscribe page</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="admins"><td class="listingname"><a href="javascript:;">Admins</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="admins">
+ <td class="listingname">
+    <a href="#">Admins</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="adminattributes"><td class="listingname"><a href="javascript:;">Admin attributes</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="adminattributes">
+ <td class="listingname">
+  <a href="#">Admin attributes</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="send-message"><td class="listingname"><a href="javascript:;">Send</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="send-message">
+ <td class="listingname">
+    <a href="#">Send</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="templates"><td class="listingname"><a href="javascript:;">Templates</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="templates">
+ <td class="listingname">
+    <a href="#">Templates</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="list-all-msg"><td class="listingname"><a href="javascript:;">Messages</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="list-all-msg">
+ <td class="listingname">
+    <a href="#">Messages</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="processqueue"><td class="listingname"><a href="javascript:;">Process</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="processqueue">
+ <td class="listingname">
+    <a href="#">Process</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="bounces"><td class="listingname"><a href="javascript:;">Bounces</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="bounces">
+ <td class="listingname">
+    <a href="#">Bounces</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="plugin"><td class="listingname"><a href="javascript:;">Plugin</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="plugin">
+ <td class="listingname">
+    <a href="#">Plugin</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="setup"><td class="listingname"><a href="javascript:;">Setup</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="setup">
+ <td class="listingname">
+    <a href="#">Setup</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="dbcheck"><td class="listingname"><a href="javascript:;">Databases</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="dbcheck">
+ <td class="listingname">
+    <a href="#">Databases</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="upgrade"><td class="listingname"><a href="javascript:;">Upgrade</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="upgrade">
+ <td class="listingname">
+    <a href="#">Upgrade</a>
+ </td>
+</tr>
+</textarea></td>
+</tr>
+<tr class="view-log"><td class="listingname"><a href="javascript:;">Log</a></td>
+<td class="hide-on-mobile" style="padding:0px 10px"><textarea style="max-width:100%;min-width:320px;height:80px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<tr class="view-log">
+ <td class="listingname">
+    <a href="#">Log</a>
+ </td>
+</tr>
+</textarea></td>
+</tr></table>
+</div>
+</div>
 
 
 <!--
