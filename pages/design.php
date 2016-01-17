@@ -13,8 +13,8 @@
 
 <br /><br />
 <hr />
-
 <section id="common-text">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Common Text styles</h1>
 <a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
@@ -41,6 +41,7 @@
 
 <hr />
 <section id="custom-text">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Custom text style</h1>
 <a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
@@ -54,6 +55,7 @@
 <hr />
 
 <section id="lists">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Lists</h1>
 <a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
@@ -76,6 +78,7 @@
 <hr />
 
 <section id="boxes">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Boxes</h1>
 <a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
@@ -90,6 +93,7 @@
 <hr />
 
 <section id="panel">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">The panel</h1>
 <a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
@@ -116,6 +120,7 @@
 <hr />
 
 <section id="helper">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Helper classes</h1>
 <a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
@@ -136,6 +141,7 @@ You can apply this two classes to any element, like cell tables, row tables, com
 <hr />
 
 <section id="tables">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Tables</h1>
 <a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
@@ -195,6 +201,7 @@ This is the code of the table above:
 <hr />
 
 <section id="accordion">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">ACCORDION</h1>
 <a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
@@ -222,6 +229,7 @@ The result should look like this:
 <hr />
 
 <section id="menus">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Menus</h1>
 <a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
@@ -257,6 +265,7 @@ The result should look like this:
 <hr />
 
 <section id="buttons">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Buttons</h1>
 <a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
@@ -528,6 +537,7 @@ The result should look like this:
 <hr />
 
 <section id="loaders">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Loaders</h1>
 <a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
