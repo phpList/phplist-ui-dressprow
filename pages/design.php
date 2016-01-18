@@ -1,6 +1,17 @@
 <div id="menud">
 <p>This page is for development purpose only. You will find here all the current styles and UI elements that can help you with you theme or plugin design.</p>
-<a href="#common-text" style="padding:5px 10px;display:inline-block">Common Text styles</a> | <a href="#custom-text"  style="padding:5px 10px;display:inline-block">Custom Text styles</a> | <a href="#lists" style="padding:5px 10px;display:inline-block">Lists</a> | <a href="#boxes" style="padding:5px 10px;display:inline-block">Boxes</a> | <a href="#panel" style="padding:5px 10px;display:inline-block">The Panel</a> | <a href="#helper" style="padding:5px 10px;display:inline-block">Helper classes</a> | <a href="#tables" style="padding:5px 10px;display:inline-block">Tables</a> | <a href="#accordion" style="padding:5px 10px;display:inline-block">Accordion</a> | <a href="#menus" style="padding:5px 10px;display:inline-block">Menus</a> | <a href="#buttons" style="padding:5px 10px;display:inline-block">Buttons</a> | <a href="#loaders" style="padding:5px 10px;display:inline-block">Loaders</a>
+<a href="#common-text" style="padding:5px 10px;display:inline-block">Common Text styles</a> | 
+<a href="#custom-text" style="padding:5px 10px;display:inline-block">Custom Text styles</a> | 
+<a href="#lists" style="padding:5px 10px;display:inline-block">Lists</a> | 
+<a href="#boxes" style="padding:5px 10px;display:inline-block">Boxes</a> | 
+<a href="#panel" style="padding:5px 10px;display:inline-block">The Panel</a> | 
+<a href="#helper" style="padding:5px 10px;display:inline-block">Helper classes</a> | 
+<a href="#tables" style="padding:5px 10px;display:inline-block">Tables</a> | 
+<a href="#accordion" style="padding:5px 10px;display:inline-block">Accordion</a> | 
+<a href="#menus" style="padding:5px 10px;display:inline-block">Menus</a> | 
+<a href="#buttons" style="padding:5px 10px;display:inline-block">Buttons</a> | 
+<a href="#loaders" style="padding:5px 10px;display:inline-block">Loaders</a> | 
+<a href="#tabs" style="padding:5px 10px;display:inline-block">Tabs</a>
 </div>
 
 
@@ -564,17 +575,51 @@ The result should look like this:
 <br /><br />
 </section>
 
-<!--
-<div class="panel">
-<div class="header"> </div>
-<div class="content">
-<table class="listing">
-<tr class="send-campaign"><td class="listingname"><span class="listingname"><a class="listingname">send acampaing</a></span></td><td class="listingelement"><code>tr.send-campaign td.listingname a</code></td></tr>
-</table>
+<hr />
+
+<section id="tabs">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
+<h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Tabs</h1>
+<a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
+<hr />
+<br />
+<h3>Common Tabs</h3>
+<div class="tabbed">
+  <ul>
+    <li><a href="#tab1">Tab 1</a></li>
+    <li><a href="#tab2">Tab 2</a></li>
+  </ul>
+<div id="tab1">
+<h3>Tab 1 title</h3>
+<p>Tab 1 text.</p>
+</div> 
+<div id="tab2">
+<h3>Tab 2 title</h3>
+<p>Tab 2 text.</p>
+</div> 
+</div><!-- /tabbed -->
+<br />
+<textarea style="max-width:100%;width:100%;height:210px;font-family:monospace;padding:5px;resize:none" readonly>
+<div class="tabbed">
+  <ul>
+    <li><a href="#tab1">Tab 1</a></li>
+    <li><a href="#tab2">Tab 2</a></li>
+  </ul>
+  <div id="tab1">
+    <h3>Tab 1 title</h3>
+    <p>Tab 1 text.</p>
+  </div> 
+  <div id="tab2">
+    <h3>Tab 2 title</h3>
+    <p>Tab 2 text.</p>
+  </div> 
 </div>
-<div class="footer"></div>
-</div>
--->
+</textarea>
+<hr />
+<br />
+<h3>Custom Tabs</h3>
+</section>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script>
