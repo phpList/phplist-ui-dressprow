@@ -1,8 +1,33 @@
+<div id="menud">
 <p>This page is for development purpose only. You will find here all the current styles and UI elements that can help you with you theme or plugin design.</p>
+<a href="#common-text" style="padding:5px 10px;display:inline-block">Common Text styles</a> | 
+<a href="#custom-text" style="padding:5px 10px;display:inline-block">Custom Text styles</a> | 
+<a href="#lists" style="padding:5px 10px;display:inline-block">Lists</a> | 
+<a href="#boxes" style="padding:5px 10px;display:inline-block">Boxes</a> | 
+<a href="#panel" style="padding:5px 10px;display:inline-block">The Panel</a> | 
+<a href="#helper" style="padding:5px 10px;display:inline-block">Helper classes</a> | 
+<a href="#tables" style="padding:5px 10px;display:inline-block">Tables</a> | 
+<a href="#accordion" style="padding:5px 10px;display:inline-block">Accordion</a> | 
+<a href="#menus" style="padding:5px 10px;display:inline-block">Menus</a> | 
+<a href="#buttons" style="padding:5px 10px;display:inline-block">Buttons</a> | 
+<a href="#loaders" style="padding:5px 10px;display:inline-block">Loaders</a> | 
+<a href="#tabs" style="padding:5px 10px;display:inline-block">Tabs</a>
+</div>
+
+
+
+
+
+
+
+
 
 <br /><br />
 <hr />
+<section id="common-text">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Common Text styles</h1>
+<a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
 <br />
 <table style="width:auto;padding:0 10px;margin:0">
@@ -21,22 +46,31 @@
 <tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:200px;font-family:monospace" readonly value='<ins>Inserted</ins>' /></td><td style="padding:5px 20px"><ins>Inserted</ins></td></tr>
 <tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:200px;font-family:monospace" readonly value='<a href="#">Link</a>' /></td><td style="padding:5px 20px"><a href="javascript:;">Link</a></td></tr>
 </table>
-
 <br /><br />
+
+</section>
+
 <hr />
+<section id="custom-text">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Custom text style</h1>
+<a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
 <h1 class="pagetitle">Page title style </h1>
 <h4 class="pagetitle">Page title style </h4>
 <p class="pagetitle">Page title style </p>
 <p>You can use this style with any heading of paragraph. Just add the class <mark><code>.pagetitle</code></mark> inline the html tag.</p>
-
 <br /><br />
+</section>
+
 <hr />
+
+<section id="lists">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Lists</h1>
+<a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
 <br />
-
 <h4>Unordered list</h4>
 <ul>
   <li>First element</li>
@@ -49,21 +83,30 @@
   <li>Second element</li>
   <li>Third element</li>
 </ol>
-
 <br /><br />
+</section>
+
 <hr />
+
+<section id="boxes">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Boxes</h1>
+<a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
 <br />
 <div class="note">This box is for notification messages. Just add the class <mark><code>.note</code></mark> to a div.</div>
 <div class="error">This box is for error messages. Just add the class <mark><code>.error</code></mark> to a div.</div>
 <div class="result">This box is for result messages. Just add the class <mark><code>.result</code></mark> to a div.</div>
 <p><small>NOTE: There is a black box for "result messages" that go invisible after a few seconds. Reload this page to see it.</small></p>
-
-
 <br /><br />
+</section>
+
 <hr />
+
+<section id="panel">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">The panel</h1>
+<a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
 <br />
 <p>Most of the screens are structured with a div named <mark><code>.panel</code></mark>, including a <mark><code>.header</code></mark> div, a <mark><code>.content</code></mark> div and a <mark><code>.footer</code></mark> div (usually empty).</p>
@@ -82,10 +125,15 @@
 </div>
 <br />
 <p>You can add inside the <code>.content</code> div of the panel all kind of information elemnts, like tables, forms, tabs, accordions, etc.</p>
-
 <br /><br />
+</section>
+
 <hr />
+
+<section id="helper">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Helper classes</h1>
+<a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
 <h3>Show & Hide</h3>
 <p>Thare are 3 items in this list below. You can modify your browser window size to see the effect.</p>
@@ -98,10 +146,15 @@
 The second has the class <mark><code>.show-on-mobile</code></mark> and will be visible only on screens smaller than 768px width.<br />
 The third has the class <mark><code>.hide-on-mobile</code></mark> and will be visible only on screens bigger than 768px width.<br />
 You can apply this two classes to any element, like cell tables, row tables, complete tables, divs, form elements, paragraphs, etc.</p>
-
 <br /><br />
+</section>
+
 <hr />
+
+<section id="tables">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Tables</h1>
+<a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
 <br />
 <p>The first columns of tables has class <code>.listinghdname</code> for th, and <code>.listingrowname</code> for tds.<br />
@@ -154,11 +207,16 @@ This is the code of the table above:
 </table>
 </textarea>
 <br /><br />
+</section>
+
 <hr />
+
+<section id="accordion">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">ACCORDION</h1>
+<a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
 <br />
-
 <p>To use an accordion, create a div class <mark><code>.accordion</code></mark>. 
 Into that div add, for each item, a <code>&lt;h3&gt;</code> tag and insde a <code>&lt;a&gt;</code> with the item title. And after that add a div with the item text. Like this:</p>
 <textarea readonly style="resize:none;height:100px;font-family:monospace;padding:15px 15px 0px;overflow:auto;">
@@ -169,7 +227,6 @@ Into that div add, for each item, a <code>&lt;h3&gt;</code> tag and insde a <cod
   <div>Second item text</div>
 </div>
 </textarea>
-
 The result should look like this:
 <div class="accordion">
   <h3><a href="javascript:;">First item title</a></h3>
@@ -178,8 +235,14 @@ The result should look like this:
   <div>Second item text</div>
 </div>
 <br /><br />
+</section>
+
 <hr />
+
+<section id="menus">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Menus</h1>
+<a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
 <br />
 <h5>The <mark>#webblertabs</mark></h5>
@@ -208,8 +271,14 @@ The result should look like this:
 </div>
 <br />
 <br /><br />
+</section>
+
 <hr />
+
+<section id="buttons">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
 <h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Buttons</h1>
+<a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
 <hr />
 <br />
 <table style="width:auto;padding:0 10px;margin:0">
@@ -472,17 +541,101 @@ The result should look like this:
 </textarea></td>
 </tr></table>
 </div>
-</div>
+</div><br />
+<br /><br />
+</section>
 
+<hr />
 
-<!--
-<div class="panel">
-<div class="header"> </div>
-<div class="content">
-<table class="listing">
-<tr class="send-campaign"><td class="listingname"><span class="listingname"><a class="listingname">send acampaing</a></span></td><td class="listingelement"><code>tr.send-campaign td.listingname a</code></td></tr>
+<section id="loaders">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
+<h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Loaders</h1>
+<a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
+<hr />
+<br />
+<h3>Spinner</h3>
+<table>
+<tr><td width=60><img src="images/busy.gif" with="34" height="34" alt="Please wait" /></td>
+<td>
+<textarea style="max-width:100%;width:430px;max-height:40px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<img src="images/busy.gif" with="34" height="34" alt="Please wait" />
+</textarea>
+</td>
+</tr>
 </table>
+<hr /><br />
+<h3>Progressbar</h3>
+<div aria-valuenow="50" aria-valuemax="100" aria-valuemin="0" role="progressbar" class="ui-progressbar ui-widget ui-widget-content ui-corner-all" id="progressbar"><div style="width: 50%;" class="ui-progressbar-value ui-widget-header ui-corner-left"></div></div>
+<br />
+<textarea style="max-width:100%;width:100%;height:100px;font-family:monospace;padding:5px;resize:none" readonly>
+<div aria-valuenow="50" aria-valuemax="100" aria-valuemin="0" role="progressbar" class="ui-progressbar ui-widget ui-widget-content ui-corner-all" id="progressbar">
+<div style="width: 50%;" class="ui-progressbar-value ui-widget-header ui-corner-left"></div>
 </div>
-<div class="footer"></div>
+</textarea>
+<br /><br />
+</section>
+
+<hr />
+
+<section id="tabs">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
+<h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Tabs</h1>
+<a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
+<hr />
+<br />
+<h3>Common Tabs</h3>
+<div class="tabbed">
+  <ul>
+    <li><a href="#tab1">Tab 1</a></li>
+    <li><a href="#tab2">Tab 2</a></li>
+  </ul>
+<div id="tab1">
+<h3>Tab 1 title</h3>
+<p>Tab 1 text.</p>
+</div> 
+<div id="tab2">
+<h3>Tab 2 title</h3>
+<p>Tab 2 text.</p>
+</div> 
+</div><!-- /tabbed -->
+<br />
+<textarea style="max-width:100%;width:100%;height:210px;font-family:monospace;padding:5px;resize:none" readonly>
+<div class="tabbed">
+  <ul>
+    <li><a href="#tab1">Tab 1</a></li>
+    <li><a href="#tab2">Tab 2</a></li>
+  </ul>
+  <div id="tab1">
+    <h3>Tab 1 title</h3>
+    <p>Tab 1 text.</p>
+  </div> 
+  <div id="tab2">
+    <h3>Tab 2 title</h3>
+    <p>Tab 2 text.</p>
+  </div> 
 </div>
--->
+</textarea>
+<hr />
+<br />
+<h3>Custom Tabs</h3>
+</section>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script>
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+
+</script>
