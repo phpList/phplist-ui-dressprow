@@ -11,7 +11,10 @@
 <a href="#menus" style="padding:5px 10px;display:inline-block">Menus</a> | 
 <a href="#buttons" style="padding:5px 10px;display:inline-block">Buttons</a> | 
 <a href="#loaders" style="padding:5px 10px;display:inline-block">Loaders</a> | 
-<a href="#tabs" style="padding:5px 10px;display:inline-block">Tabs</a>
+<a href="#tabs" style="padding:5px 10px;display:inline-block">Tabs</a> |
+<a href="#forms" style="padding:5px 10px;display:inline-block">Form elements</a> |
+<a href="#icons" style="padding:5px 10px;display:inline-block">Icons</a>
+
 </div>
 
 
@@ -289,6 +292,21 @@ The result should look like this:
 <tr><td class="hide-on-mobile" style="padding-top:5px"><input type="text" style="max-width:100%;min-width:350px;font-family:monospace" readonly value='<a class="reset"">Reset button</a>' /></td><td style="padding:0px 20px"><a class="reset" href="javascript:;">Reset button</a></td></tr>
 </table>
 <hr /><br />
+These BACK and NEXT buttons need to be inside a <mark>.panel</mark> class. So if you want to use them inside a table,
+just add the class="panel" inline the td, as it is done below.
+<table style="width:auto;padding:0 10px;margin:0">
+<tr><td class="hide-on-mobile" style="padding-top:5px">
+<textarea style="max-width:100%;min-width:350px;height:70px;font-family:monospace;overflow:hidden;padding:5px;resize:none" readonly>
+<td class="panel"><div class="step-nav">
+    <a class="next" href="#">Next</a>
+    <a class="back" href="#">Back</a>
+</div></td>
+</textarea></td>
+<td style="padding:0px 20px" class="panel"><div class="step-nav"><a class="next savechanges" href="javascript:;">Next</a><a class="back savechanges" href="javascript:;">Back</a></td></tr>
+</table>
+
+<hr /><br />
+
 <table style="width:auto;padding:0 10px;margin:0">
 <tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:230px;font-family:monospace" readonly value='<a class="hide"></a>' /></td><td style="padding:10px 25px"><a class="hide" href="javascript:;"></a></td></tr>
 <tr><td class="hide-on-mobile" style="padding-top:0px"><input type="text" style="max-width:100%;min-width:230px;font-family:monospace" readonly value='<a class="del"></a>' /></td><td style="padding:5px 20px"><a class="del" href="javascript:;"></a></td></tr>
@@ -617,9 +635,127 @@ The result should look like this:
 </textarea>
 <hr />
 <br />
-<h3>Custom Tabs</h3>
+<h3>The Send Tabs</h3>
+
+This tabs are used on the "Start a new Campaign" screen. Each tab is realy a link but designed as a tab, 
+and they use the jQuery plugin http://www.gmarwaha.com/jquery/jcarousellite/ 
+to slide the tabs when they exceed the width of the container.
+
+<div class="sendtabs_container">
+    <div id="sendtabs">
+        <ul class="sendcampaign">
+            <li class="current"><a href="javascript:;"><span class="tabno">1</span>One</a></li>
+            <li><a href="javascript:;"><span class="tabno">2</span>Two</a></li>
+            <li><a href="javascript:;"><span class="tabno">3</span>Three</a></li>
+            <li><a href="javascript:;"><span class="tabno">4</span>Four</a></li>
+            <li><a href="javascript:;"><span class="tabno">5</span>Five</a></li>
+            <li><a href="javascript:;"><span class="tabno">6</span>Six</a></li>
+        </ul>
+    </div>
+    <img src="ui/dressprow/images/prevtab.png" id="prev" class="prevtab">
+    <img src="ui/dressprow/images/nexttab.png" id="next" class="nexttab">
+</div>
+<br />
+<textarea style="max-width:100%;width:100%;height:210px;font-family:monospace;padding:5px;resize:none" readonly>
+<div class="sendtabs_container">
+ <div id="sendtabs">
+  <ul class="sendcampaign">
+   <li class="current"><a href="#"><span class="tabno">1</span>One</a></li>
+   <li><a href="#"><span class="tabno">2</span>Two</a></li>
+   <li><a href="#"><span class="tabno">3</span>Three</a></li>
+   <li><a href="#"><span class="tabno">4</span>Four</a></li>
+   <li><a href="#"><span class="tabno">5</span>Five</a></li>
+   <li><a href="#"><span class="tabno">6</span>Six</a></li>
+  </ul>
+ </div>
+ <img src="ui/dressprow/images/prevtab.png" id="prev" class="prevtab">
+ <img src="ui/dressprow/images/nexttab.png" id="next" class="nexttab">
+</div>
+</textarea>
+</section>
+<br />
+
+<hr />
+
+<section id="forms">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
+<h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Form elements</h1>
+<a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
+<hr />
+<br />
+
+<input type="text" value="Input type text"></input>
+
+<input type="password" value="Input type password"></input>
+
+<textarea>Textarea</textarea>
+
+<select>
+    <option>Select option 1</option>
+    <option>Select Option 2</option>
+</select>
+
+<label for="check">Checkbox: <input name="check" type="checkbox"></label>
+<br />
+<label for="radio">Radio: <input name="radio" type="radio"></label>
+<br />
+<hr />
+<br />
+<p>There is a small hack in the "Start a New Campaign" screen, under the tab "List".
+This hack use a javascript applied to the checkbox inside the <mark>#listselection</mark> div.</p>
+
+<div id="listselection">
+ <div class="tabbed">
+  <ul class="ui-tabs-nav"></ul> 
+  <div id="targetlist1"><ul>
+    <li>
+    <input style="display: none;" id="targetlist[all]" type="checkbox">
+    <label for="targetlist[all]">All Lists</label>
+    </li>
+   </ul></div>
+  </div>
+</div>
+<br />
+<p>All the classes showed below are needed for this to work.</p>
+
+<textarea style="max-width:100%;width:100%;height:170px;font-family:monospace;padding:5px;resize:none" readonly>
+<div id="listselection">
+ <div class="tabbed">
+  <ul class="ui-tabs-nav"></ul> 
+  <div id="targetlist1"><ul>
+    <li>
+    <input style="display: none;" id="targetlist[all]" type="checkbox">
+    <label for="targetlist[all]">All Lists</label>
+    </li>
+   </ul></div>
+  </div>
+</div>
+</textarea>
 </section>
 
+<br />
+
+<hr />
+
+<section id="icons">
+<a href="#menud" style="font-size:12px;float:right;padding-right:10px;padding-top:0">BACK TO TOP</a><div style="clear:both;float:none"></div>
+<h1 class="pagetitle" style="background:#000;padding-left:10px;margin-bottom:5px;color:#FFF">Icons</h1>
+<a href="#menud" style="font-size:12px;padding-right:10px;padding-top:0">BACK TO TOP</a>
+<hr />
+<br />
+
+<p>There are some small icons in the links of the page "Manage Subscribers" (usermgt), but they are only visible in that page so I can only include the images here.</p>
+
+<p><img src="/lists/admin/ui/dressprow/images/16x16/search.png" /></p>
+<p><img src="/lists/admin/ui/dressprow/images/16x16/attibutes.png" /></p>
+<p><img src="/lists/admin/ui/dressprow/images/16x16/pencil.png" /></p>
+<p><img src="/lists/admin/ui/dressprow/images/16x16/database.png" /></p>
+<p><img src="/lists/admin/ui/dressprow/images/16x16/issue.png" /></p>
+<p><img src="/lists/admin/ui/dressprow/images/16x16/check.png" /></p>
+<p><img src="/lists/admin/ui/dressprow/images/16x16/importusers.png" /></p>
+<p><img src="/lists/admin/ui/dressprow/images/16x16/exportusers.png" /></p>
+
+</section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script>
@@ -636,6 +772,45 @@ $(function() {
       }
     }
   });
+});
+
+$(document).ready(function() {
+    var counttab = 6;
+    var currenttab = $('.current').attr('id');
+    if(matchMedia('only screen and (max-width: 480px)').matches){ tabs=2; starttab=currenttab-2; }
+    else if(matchMedia('only screen and (max-width: 767px)').matches){ tabs=3; starttab=currenttab-3;}
+    else if(matchMedia('only screen and (max-width: 967px)').matches){ tabs=4; starttab=currenttab-4;}
+    else{ tabs=6; starttab=currenttab-6; }
+
+    $('#sendtabs').jCarouselLite({
+        btnNext: '.nexttab',
+        btnPrev: '.prevtab',
+        circular: false,
+        visible: tabs,
+        auto: null,
+        speed:100,
+        scroll:1,
+        start: starttab
+    });
+});
+$(window).resize(function(){
+    var counttab = 6;
+    var currenttab = $('.current').attr('id');
+    if(matchMedia('only screen and (max-width: 480px)').matches){ tabs=2;starttab=currenttab-2;}
+    else if(matchMedia('only screen and (max-width: 767px)').matches){ tabs=3; starttab=currenttab-3;}
+    else if(matchMedia('only screen and (max-width: 967px)').matches){ tabs=4; starttab=currenttab-4;}
+    else{ tabs=6; starttab=currenttab-6; }
+
+    $('#sendtabs').jCarouselLite({
+        btnNext: '.nexttab',
+        btnPrev: '.prevtab',
+        circular: false,
+        visible: tabs,
+        auto: null,
+        speed:100,
+        scroll:1,
+        start: starttab
+    });
 });
 
 </script>
