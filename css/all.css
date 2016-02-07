@@ -1655,6 +1655,10 @@ ul.ui-tabs-nav											{ padding:0px}
 .ui-tabs-panel h3,body#app .ui-tabs-panel h2.account	{font-size:18px;padding:2px 10px}
 ui-tabs table th 										{ font-size: 14px;  font-weight:bold;  }
 div.notes, a.footnote 									{ font-size: 10px; vertical-align: super; }
+@media only screen and (max-width: 767px){
+    .tabbed.ui-tabs .ui-tabs-nav li                     {width:99%}
+    .tabbed.ui-tabs .ui-tabs-nav li a                   {width:95%;display:block}
+}
 
 /* dropdown menus (webblertabs) */
 div.dropButton											{ width:190px; position:relative; padding:5px 5px 5px 10px; margin:10px 10px 10px 0px; background:url('../../dressprow/images/menuarrow.png') 180px 3px no-repeat; border-width:1px; border-style:solid; -webkit-border-radius:8px; -moz-border-radius:8px; border-radius:8px; font-size:15px; line-height:15px; font-variant:small-caps; clear:both}
