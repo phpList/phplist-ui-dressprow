@@ -186,15 +186,15 @@ div.notes, a.footnote 									{ font-size: 10px; vertical-align: super; }
 div.dropButton											{ width:190px; position:relative; padding:5px 5px 5px 10px; margin:10px 10px 10px 0px; background:url('../../dressprow/images/menuarrow.png') 180px 3px no-repeat; border-width:1px; border-style:solid; -webkit-border-radius:8px; -moz-border-radius:8px; border-radius:8px; font-size:15px; line-height:15px; font-variant:small-caps; clear:both}
 div.dropButton a img.arrow								{ display:none}
 div.dropButton .submenu a 								{ line-height:12px; padding:7px; margin-top:5px; width:175px; font-size:13px; border-top-width:1px; border-top-style:dotted; display:inline-block; -webkit-border-radius:8px; -moz-border-radius:8px; border-radius:8px}
-#webblertabs											{ width:200px; position:relative; margin:10px 10px 10px 0px; background:url('../../dressprow/images/menuarrow.png') 175px 3px no-repeat; border-width:1px; border-style:solid; -webkit-border-radius:8px; -moz-border-radius:8px; border-radius:8px}
-#webblertabs ul											{ padding-top:2px !important; list-style:none}
+#webblertabs											{ min-height:28px;width:200px; position:relative; margin:10px 10px 10px 0px; background:url('../../dressprow/images/menuarrow.png') 170px 3px no-repeat; border-width:1px; border-style:solid; -webkit-border-radius:8px; -moz-border-radius:8px; border-radius:8px}
+#webblertabs ul											{ width:170px; margin:0px;padding:0px 0px; list-style:none;position:absolute;clear:both; font-size:15px; line-height:15px; border: 1px solid #CCC;border-radius: 8px;background:rgba(250,250,250,0.95)}
+.minitabs #webblertabs ul                               {position:relative}
 #webblertabs ul li										{ margin-left:2px; padding:0px}
 #webblertabs ul li a									{ padding:1px 10px !important; width:150px; overflow:hidden}
 div.dropButton .submenu a:hover 						{ margin-top:5px}
-#webblertabs ul, #webblertabs ul li,
-#webblertabs ul li a 									{ width:170px; margin:0px; padding:1px 0px; border:none; clear:both; font-size:15px; line-height:15px; -webkit-border-radius:6px; -moz-border-radius:6px; border-radius:6px}
+#webblertabs ul li, #webblertabs ul li a                { width:170px; margin:0px; padding:1px 0px; border:none; clear:both; font-size:15px; line-height:15px; -webkit-border-radius:6px; -moz-border-radius:6px; border-radius:6px}
 #webblertabs ul li:hover,
-div.dropButton .submenu a:hover							{ border-width:1px; border-style:solid} 
+div.dropButton .submenu a:hover							{ border:0} 
 
 /* minitabs (webblertabs inside "minitabs" div)  */
 .minitabs                                               { margin:0px auto 5px;padding:0px}
