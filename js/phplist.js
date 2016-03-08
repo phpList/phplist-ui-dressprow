@@ -98,6 +98,8 @@ $(document).ready(function() {
         $(this).find('ul li').hide();
         $(this).find('ul li.current').show();
     });
+    $('#webblertabs .current a').click(function () {return false;});
+    
     $('#webblertabs').hover(function(){
         $(this).find('ul li').slideDown();
     },
