@@ -760,304 +760,329 @@ e*2;b.animate(c,f,a.options.easing);for(e=1;e<l;e++)b.animate(i,f,a.options.easi
 b.dequeue()})})}})(jQuery);
 ;
 /*phpList3/public_html/lists/admin/js/jquery.tools.scrollable.js*/ /**
- * @license 
+ * @license
  * jQuery Tools 1.2.2 Scrollable - New wave UI design
- * 
+ *
  * NO COPYRIGHTS OR LICENSES. DO WHAT YOU LIKE.
- * 
+ *
  * http://flowplayer.org/tools/scrollable.html
  *
  * Since: March 2008
- * Date:    Wed May 19 06:53:17 2010 +0000 
+ * Date:    Wed May 19 06:53:17 2010 +0000
  */
-(function($) { 
+(function ($) {
 
-	// static constructs
-	$.tools = $.tools || {version: '1.2.2'};
-	
-	$.tools.scrollable = {
-		
-		conf: {	
-			activeClass: 'active',
-			circular: false,
-			clonedClass: 'cloned',
-			disabledClass: 'disabled',
-			easing: 'swing',
-			initialIndex: 0,
-			item: null,
-			items: '.items',
-			keyboard: true,
-			mousewheel: false,
-			next: '.next',   
-			prev: '.prev', 
-			speed: 400,
-			vertical: false,
-			wheelSpeed: 0
-		} 
-	};
-					
-	// get hidden element's width or height even though it's hidden
-	function dim(el, key) {
-		var v = parseInt(el.css(key), 10);
-		if (v) { return v; }
-		var s = el[0].currentStyle; 
-		return s && s.width && parseInt(s.width, 10);	
-	}
+    // static constructs
+    $.tools = $.tools || {version: '1.2.2'};
 
-	function find(root, query) { 
-		var el = $(query);
-		return el.length < 2 ? el : root.parent().find(query);
-	}
-	
-	var current;		
-	
-	// constructor
-	function Scrollable(root, conf) {   
-		
-		// current instance
-		var self = this, 
-			 fire = root.add(self),
-			 itemWrap = root.children(),
-			 index = 0,
-			 vertical = conf.vertical;
-				
-		if (!current) { current = self; } 
-		if (itemWrap.length > 1) { itemWrap = $(conf.items, root); }
-		
-		// methods
-		$.extend(self, {
-				
-			getConf: function() {
-				return conf;	
-			},			
-			
-			getIndex: function() {
-				return index;	
-			}, 
+    $.tools.scrollable = {
 
-			getSize: function() {
-				return self.getItems().size();	
-			},
+        conf: {
+            activeClass: 'active',
+            circular: false,
+            clonedClass: 'cloned',
+            disabledClass: 'disabled',
+            easing: 'swing',
+            initialIndex: 0,
+            item: null,
+            items: '.items',
+            keyboard: true,
+            mousewheel: false,
+            next: '.next',
+            prev: '.prev',
+            speed: 400,
+            vertical: false,
+            wheelSpeed: 0
+        }
+    };
 
-			getNaviButtons: function() {
-				return prev.add(next);	
-			},
-			
-			getRoot: function() {
-				return root;	
-			},
-			
-			getItemWrap: function() {
-				return itemWrap;	
-			},
-			
-			getItems: function() {
-				return itemWrap.children(conf.item).not("." + conf.clonedClass);	
-			},
-							
-			move: function(offset, time) {
-				return self.seekTo(index + offset, time);
-			},
-			
-			next: function(time) {
-				return self.move(1, time);	
-			},
-			
-			prev: function(time) {
-				return self.move(-1, time);	
-			},
-			
-			begin: function(time) {
-				return self.seekTo(0, time);	
-			},
-			
-			end: function(time) {
-				return self.seekTo(self.getSize() -1, time);	
-			},	
-			
-			focus: function() {
-				current = self;
-				return self;
-			},
-			
-			addItem: function(item) {
-				item = $(item);
-				
-				if (!conf.circular)  {
-					itemWrap.append(item);
-				} else {
-					$(".cloned:last").before(item);
-					$(".cloned:first").replaceWith(item.clone().addClass(conf.clonedClass)); 						
-				}
-				
-				fire.trigger("onAddItem", [item]);
-				return self;
-			},
-			
-			
-			/* all seeking functions depend on this */		
-			seekTo: function(i, time, fn) {	
-				
-				// avoid seeking from end clone to the beginning
-				if (conf.circular && i === 0 && index == -1 && time !== 0) { return self; }
-				
-				// check that index is sane
-				if (!conf.circular && i < 0 || i > self.getSize() || i < -1) { return self; }
-				
-				var item = i;
-			
-				if (i.jquery) {
-					i = self.getItems().index(i);	
-				} else {
-					item = self.getItems().eq(i);
-				}  
-				
-				// onBeforeSeek
-				var e = $.Event("onBeforeSeek"); 
-				if (!fn) {
-					fire.trigger(e, [i, time]);				
-					if (e.isDefaultPrevented() || !item.length) { return self; }			
-				}  
-	
-				var props = vertical ? {top: -item.position().top} : {left: -item.position().left};  
-				
-				index = i;
-				current = self;  
-				if (time === undefined) { time = conf.speed; }   
-				
-				itemWrap.animate(props, time, conf.easing, fn || function() { 
-					fire.trigger("onSeek", [i]);		
-				});	 
-				
-				return self; 
-			}					
-			
-		});
-				
-		// callbacks	
-		$.each(['onBeforeSeek', 'onSeek', 'onAddItem'], function(i, name) {
-				
-			// configuration
-			if ($.isFunction(conf[name])) { 
-				$(self).bind(name, conf[name]); 
-			}
-			
-			self[name] = function(fn) {
-				$(self).bind(name, fn);
-				return self;
-			};
-		});  
-		
-		// circular loop
-		if (conf.circular) {
-			
-			var cloned1 = self.getItems().slice(-1).clone().prependTo(itemWrap),
-				 cloned2 = self.getItems().eq(1).clone().appendTo(itemWrap);
-				
-			cloned1.add(cloned2).addClass(conf.clonedClass);
-			
-			self.onBeforeSeek(function(e, i, time) {
+    // get hidden element's width or height even though it's hidden
+    function dim(el, key) {
+        var v = parseInt(el.css(key), 10);
+        if (v) {
+            return v;
+        }
+        var s = el[0].currentStyle;
+        return s && s.width && parseInt(s.width, 10);
+    }
 
-				
-				if (e.isDefaultPrevented()) { return; }
-				
-				/*
-					1. animate to the clone without event triggering
-					2. seek to correct position with 0 speed
-				*/
-				if (i == -1) {
-					self.seekTo(cloned1, time, function()  {
-						self.end(0);		
-					});          
-					return e.preventDefault();
-					
-				} else if (i == self.getSize()) {
-					self.seekTo(cloned2, time, function()  {
-						self.begin(0);		
-					});	
-				}
-				
-			});
-			
-			// seek over the cloned item
-			self.seekTo(0, 0);
-		}
-		
-		// next/prev buttons
-		var prev = find(root, conf.prev).click(function() { self.prev(); }),
-			 next = find(root, conf.next).click(function() { self.next(); });	
-		
-		if (!conf.circular && self.getSize() > 1) {
-			
-			self.onBeforeSeek(function(e, i) {
-				prev.toggleClass(conf.disabledClass, i <= 0);
-				next.toggleClass(conf.disabledClass, i >= self.getSize() -1);
-			}); 
-		}
-			
-		// mousewheel support
-		if (conf.mousewheel && $.fn.mousewheel) {
-			root.mousewheel(function(e, delta)  {
-				if (conf.mousewheel) {
-					self.move(delta < 0 ? 1 : -1, conf.wheelSpeed || 50);
-					return false;
-				}
-			});			
-		}
-		
-		if (conf.keyboard)  {
-			
-			$(document).bind("keydown.scrollable", function(evt) {
+    function find(root, query) {
+        var el = $(query);
+        return el.length < 2 ? el : root.parent().find(query);
+    }
 
-				// skip certain conditions
-				if (!conf.keyboard || evt.altKey || evt.ctrlKey || $(evt.target).is(":input")) { return; }
-				
-				// does this instance have focus?
-				if (conf.keyboard != 'static' && current != self) { return; }
-					
-				var key = evt.keyCode;
-			
-				if (vertical && (key == 38 || key == 40)) {
-					self.move(key == 38 ? -1 : 1);
-					return evt.preventDefault();
-				}
-				
-				if (!vertical && (key == 37 || key == 39)) {					
-					self.move(key == 37 ? -1 : 1);
-					return evt.preventDefault();
-				}	  
-				
-			});  
-		}
-		
-		// initial index
-		$(self).trigger("onBeforeSeek", [conf.initialIndex]);
-	} 
+    var current;
 
-		
-	// jQuery plugin implementation
-	$.fn.scrollable = function(conf) { 
-			
-		// already constructed --> return API
-		var el = this.data("scrollable");
-		if (el) { return el; }		 
+    // constructor
+    function Scrollable(root, conf) {
 
-		conf = $.extend({}, $.tools.scrollable.conf, conf); 
-		
-		this.each(function() {			
-			el = new Scrollable($(this), conf);
-			$(this).data("scrollable", el);	
-		});
-		
-		return conf.api ? el: this; 
-		
-	};
-			
-	
+        // current instance
+        var self = this,
+            fire = root.add(self),
+            itemWrap = root.children(),
+            index = 0,
+            vertical = conf.vertical;
+
+        if (!current) {
+            current = self;
+        }
+        if (itemWrap.length > 1) {
+            itemWrap = $(conf.items, root);
+        }
+
+        // methods
+        $.extend(self, {
+
+            getConf: function () {
+                return conf;
+            },
+
+            getIndex: function () {
+                return index;
+            },
+
+            getSize: function () {
+                return self.getItems().size();
+            },
+
+            getNaviButtons: function () {
+                return prev.add(next);
+            },
+
+            getRoot: function () {
+                return root;
+            },
+
+            getItemWrap: function () {
+                return itemWrap;
+            },
+
+            getItems: function () {
+                return itemWrap.children(conf.item).not("." + conf.clonedClass);
+            },
+
+            move: function (offset, time) {
+                return self.seekTo(index + offset, time);
+            },
+
+            next: function (time) {
+                return self.move(1, time);
+            },
+
+            prev: function (time) {
+                return self.move(-1, time);
+            },
+
+            begin: function (time) {
+                return self.seekTo(0, time);
+            },
+
+            end: function (time) {
+                return self.seekTo(self.getSize() - 1, time);
+            },
+
+            focus: function () {
+                current = self;
+                return self;
+            },
+
+            addItem: function (item) {
+                item = $(item);
+
+                if (!conf.circular) {
+                    itemWrap.append(item);
+                } else {
+                    $(".cloned:last").before(item);
+                    $(".cloned:first").replaceWith(item.clone().addClass(conf.clonedClass));
+                }
+
+                fire.trigger("onAddItem", [item]);
+                return self;
+            },
+
+
+            /* all seeking functions depend on this */
+            seekTo: function (i, time, fn) {
+
+                // avoid seeking from end clone to the beginning
+                if (conf.circular && i === 0 && index == -1 && time !== 0) {
+                    return self;
+                }
+
+                // check that index is sane
+                if (!conf.circular && i < 0 || i > self.getSize() || i < -1) {
+                    return self;
+                }
+
+                var item = i;
+
+                if (i.jquery) {
+                    i = self.getItems().index(i);
+                } else {
+                    item = self.getItems().eq(i);
+                }
+
+                // onBeforeSeek
+                var e = $.Event("onBeforeSeek");
+                if (!fn) {
+                    fire.trigger(e, [i, time]);
+                    if (e.isDefaultPrevented() || !item.length) {
+                        return self;
+                    }
+                }
+
+                var props = vertical ? {top: -item.position().top} : {left: -item.position().left};
+
+                index = i;
+                current = self;
+                if (time === undefined) {
+                    time = conf.speed;
+                }
+
+                itemWrap.animate(props, time, conf.easing, fn || function () {
+                        fire.trigger("onSeek", [i]);
+                    });
+
+                return self;
+            }
+
+        });
+
+        // callbacks
+        $.each(['onBeforeSeek', 'onSeek', 'onAddItem'], function (i, name) {
+
+            // configuration
+            if ($.isFunction(conf[name])) {
+                $(self).bind(name, conf[name]);
+            }
+
+            self[name] = function (fn) {
+                $(self).bind(name, fn);
+                return self;
+            };
+        });
+
+        // circular loop
+        if (conf.circular) {
+
+            var cloned1 = self.getItems().slice(-1).clone().prependTo(itemWrap),
+                cloned2 = self.getItems().eq(1).clone().appendTo(itemWrap);
+
+            cloned1.add(cloned2).addClass(conf.clonedClass);
+
+            self.onBeforeSeek(function (e, i, time) {
+
+
+                if (e.isDefaultPrevented()) {
+                    return;
+                }
+
+                /*
+                 1. animate to the clone without event triggering
+                 2. seek to correct position with 0 speed
+                 */
+                if (i == -1) {
+                    self.seekTo(cloned1, time, function () {
+                        self.end(0);
+                    });
+                    return e.preventDefault();
+
+                } else if (i == self.getSize()) {
+                    self.seekTo(cloned2, time, function () {
+                        self.begin(0);
+                    });
+                }
+
+            });
+
+            // seek over the cloned item
+            self.seekTo(0, 0);
+        }
+
+        // next/prev buttons
+        var prev = find(root, conf.prev).click(function () {
+                self.prev();
+            }),
+            next = find(root, conf.next).click(function () {
+                self.next();
+            });
+
+        if (!conf.circular && self.getSize() > 1) {
+
+            self.onBeforeSeek(function (e, i) {
+                prev.toggleClass(conf.disabledClass, i <= 0);
+                next.toggleClass(conf.disabledClass, i >= self.getSize() - 1);
+            });
+        }
+
+        // mousewheel support
+        if (conf.mousewheel && $.fn.mousewheel) {
+            root.mousewheel(function (e, delta) {
+                if (conf.mousewheel) {
+                    self.move(delta < 0 ? 1 : -1, conf.wheelSpeed || 50);
+                    return false;
+                }
+            });
+        }
+
+        if (conf.keyboard) {
+
+            $(document).bind("keydown.scrollable", function (evt) {
+
+                // skip certain conditions
+                if (!conf.keyboard || evt.altKey || evt.ctrlKey || $(evt.target).is(":input")) {
+                    return;
+                }
+
+                // does this instance have focus?
+                if (conf.keyboard != 'static' && current != self) {
+                    return;
+                }
+
+                var key = evt.keyCode;
+
+                if (vertical && (key == 38 || key == 40)) {
+                    self.move(key == 38 ? -1 : 1);
+                    return evt.preventDefault();
+                }
+
+                if (!vertical && (key == 37 || key == 39)) {
+                    self.move(key == 37 ? -1 : 1);
+                    return evt.preventDefault();
+                }
+
+            });
+        }
+
+        // initial index
+        $(self).trigger("onBeforeSeek", [conf.initialIndex]);
+    }
+
+
+    // jQuery plugin implementation
+    $.fn.scrollable = function (conf) {
+
+        // already constructed --> return API
+        var el = this.data("scrollable");
+        if (el) {
+            return el;
+        }
+
+        conf = $.extend({}, $.tools.scrollable.conf, conf);
+
+        this.each(function () {
+            el = new Scrollable($(this), conf);
+            $(this).data("scrollable", el);
+        });
+
+        return conf.api ? el : this;
+
+    };
+
+
 })(jQuery);
 
-/*phpList3/public_html/lists/admin/js/phplistapp.js*/ 
-/*
+/*phpList3/public_html/lists/admin/js/phplistapp.js*/ /*
  * application JS library, UI independent code
  *
  */
@@ -1067,439 +1092,444 @@ var busyImage = '<img src="images/busy.gif" with="34" height="34" border="0" alt
 var menuArrowImage = 'ui/dressprow/images/menuarrow.png';
 var menuArrowActiveImagesrc = 'ui/dressprow/images/menuarrow_active.png';
 
-function urlParameter( name, link) {
-  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-  var regexS = "[\\?&]"+name+"=([^&#]*)";
-  var regex = new RegExp( regexS );
-  var results = regex.exec( link );
-  if( results == null )
-    return "";
-  else
-    return results[1];
+function urlParameter(name, link) {
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regexS = "[\\?&]" + name + "=([^&#]*)";
+    var regex = new RegExp(regexS);
+    var results = regex.exec(link);
+    if (results == null)
+        return "";
+    else
+        return results[1];
 }
 
 var updateMessages = new Array();
 var updateLock = false;
 function messagesStatusUpdate() {
-  if (updateLock) return;
-  updateLock = true;
-  for (var i = 0; i < updateMessages.length; i++) {
-    messageStatusUpdate(updateMessages[i]);
-  }  
-  updateLock = false;
+    if (updateLock) return;
+    updateLock = true;
+    for (var i = 0; i < updateMessages.length; i++) {
+        messageStatusUpdate(updateMessages[i]);
+    }
+    updateLock = false;
 }
-  
+
 function messageStatusUpdate(msgid) {
-   if (msgid) {
-      $('#messagestatus'+msgid).load('./?page=pageaction&ajaxed=true&action=msgstatus&id='+msgid,"",function() {});
-   } 
+    if (msgid) {
+        $('#messagestatus' + msgid).load('./?page=pageaction&ajaxed=true&action=msgstatus&id=' + msgid, "", function () {
+        });
+    }
 }
 
 function getServerTime() {
-   $('#servertime').load('./?page=pageaction&ajaxed=true&action=getservertime',"",function() {
-   });
+    $('#servertime').load('./?page=pageaction&ajaxed=true&action=getservertime', "", function () {
+    });
 }
 function autoSave() {
-  // in the future, do an auto-save, for now, we want to keep the session alive
-  $("#autosave").load('./?page=pageaction&ajaxed=true&action=keepalive');
+    // in the future, do an auto-save, for now, we want to keep the session alive
+    $("#autosave").load('./?page=pageaction&ajaxed=true&action=keepalive');
 }
 
 // Function to check/ uncheck all the boxes in a category.
 function checkAllBoxes(checked, checkboxes) {
-  checkboxes.each(function(){
-    if (checked) {
-      $(this).find('input[id^=targetlist]').prop('checked', true);
-    }
-    else {
-      $(this).find('input[id^=targetlist]').prop('checked', false);
+    checkboxes.each(function () {
+        if (checked) {
+            $(this).find('input[id^=targetlist]').prop('checked', true);
         }
-  });
+        else {
+            $(this).find('input[id^=targetlist]').prop('checked', false);
+        }
+    });
 }
 
 function refreshCriteriaList() {
-  var id = urlParameter('id',document.location);
-  $("#existingCriteria").html(busyImage);
-  $("#existingCriteria").load('./?page=pageaction&ajaxed=true&action=listcriteria&id='+id);
+    var id = urlParameter('id', document.location);
+    $("#existingCriteria").html(busyImage);
+    $("#existingCriteria").load('./?page=pageaction&ajaxed=true&action=listcriteria&id=' + id);
 }
 
 function refreshExport() {
- // alert('Refresh '+document.location);
-  document.location = document.location;
+    // alert('Refresh '+document.location);
+    document.location = document.location;
 }
 
 function openHelpDialog(url) {
-  $("#dialog").dialog({
-    minHeight: 400,
-    width: 600,
-    modal: true
-  });
-  $("#dialog").html('<div class="openhelpimage">'+busyImage+'</div>');
-  var destpage = urlParameter('page',url);
-  url = url.replace(/page=/,'origpage=');
-  $("#dialog").load(url+'&ajaxed=true&page=pageaction&action='+destpage);
-  $(".ui-widget-overlay").click(function() {
-    $("#dialog").dialog('close');
-  });
+    $("#dialog").dialog({
+        minHeight: 400,
+        width: 600,
+        modal: true
+    });
+    $("#dialog").html('<div class="openhelpimage">' + busyImage + '</div>');
+    var destpage = urlParameter('page', url);
+    url = url.replace(/page=/, 'origpage=');
+    $("#dialog").load(url + '&ajaxed=true&page=pageaction&action=' + destpage);
+    $(".ui-widget-overlay").click(function () {
+        $("#dialog").dialog('close');
+    });
 }
 
 function initialiseTranslation(text) {
-  $("#dialog").dialog({
-    minHeight: 400,
-    width: 600,
-    modal: true
-  });
-  $("#dialog").html('<div class="openhelpimage">'+text+'<br/>'+busyImage+'</div>');
-  $("#dialog").load('./?ajaxed=true&page=pageaction&action=initlanguage');
+    $("#dialog").dialog({
+        minHeight: 400,
+        width: 600,
+        modal: true
+    });
+    $("#dialog").html('<div class="openhelpimage">' + text + '<br/>' + busyImage + '</div>');
+    $("#dialog").load('./?ajaxed=true&page=pageaction&action=initlanguage');
 }
 
 
 function totalSentUpdate(msgid) {
-   $('#totalsent'+msgid).load('./?page=pageaction&ajaxed=true&action=msgsent&id='+msgid,"",function() {
-   });
-   setTimeout("totalSentUpdate("+msgid+")",5000);
+    $('#totalsent' + msgid).load('./?page=pageaction&ajaxed=true&action=msgsent&id=' + msgid, "", function () {
+    });
+    setTimeout("totalSentUpdate(" + msgid + ")", 5000);
 }
 
-$(document).ready(function() {
-  $(".note .hide").click(function() {
-    $(this).parents('.note').hide();
-  });
+$(document).ready(function () {
+    $(".note .hide").click(function () {
+        $(this).parents('.note').hide();
+    });
 
-  $("a.ajaxable").click(function() {
-    var url = this.href;
-    var thispage = urlParameter('page',window.location.href);
-    if (thispage == "") {
-        thispage = "home";
-    }
-    var action = urlParameter('action',url);
-    if (action == "") {
-      url += '&action='+thispage;
-    }
-    parent = $(this).parent();
-    parent.html(busyImage);
-    url = url.replace(/page=/,'origpage=');
-  //  alert(url+'&ajaxed=true&page=pageaction');
-    parent.load(url+'&ajaxed=true&page=pageaction');
-    return false;
-  });
-
-  $("input:checkbox.checkallcheckboxes").click(function() {
-    if (this.checked) {
-      $("input[type=checkbox]:not(:checked)").each(function(){
-        this.checked = true;
-      });
-    } else {
-      $("input[type=checkbox]:checked").each(function(){
-        this.checked = false;
-      });
-    }
-  });
-
-  var stop = false;
-
-  if ($.fn.accordion) {
-    $(".accordion").accordion({
-        autoHeight: false,
-        navigation: true,
-        collapsible: true
-      });
-  }
-
-  $(".opendialog").click(function() {
-    openHelpDialog(this.href);
-    return false;
-  });
-  $(".helpdialog").click(function() {
-    openHelpDialog(this.href);
-    return false;
-  });
-  $(".closedialog").click(function() {
-    $("#dialog").dialog('close');
-  });
-                 
-  //dropbuttons						   
-  $("div.dropButton img.arrow").click(function(){ 					
-      submenu = $(this).parent().parent().find("div.submenu");		
-      if(submenu.css('display')=="block"){
-        submenu.hide(); 		
-        $(this).attr('src',menuArrowImagesrc);									
-      } else {
-        submenu.fadeIn(); 		
-        $(this).attr('src',menuArrowActiveImagesrc);	
-      }	
-      return false;					
-  });						   
-
-  /* hmm, doesn't work yet, but would be nice at some point
-  $("#emailsearch").autocomplete({
-    source: "?page=pageaction&ajaxed=true&action=searchemail",
-    minLength: 2,
-    select: function(event, ui) {
-    log(ui.item ? ("Selected: " + ui.item.value + " aka " + ui.item.id) : "Nothing selected, input was " + this.value);
-    }
-  });
-  */
-
-  if ($.fn.tabs) {
-    $(".tabbed").tabs({
-      //http://jqueryui.com/upgrade-guide/1.9/#deprecated-ajaxoptions-and-cache-options-added-beforeload-event
-        ajaxOptions: {
-        error: function(xhr, status, index, anchor) {
-          $(anchor.hash).html("Error fetching page");
+    $("a.ajaxable").click(function () {
+        var url = this.href;
+        var thispage = urlParameter('page', window.location.href);
+        if (thispage == "") {
+            thispage = "home";
         }
-      }
+        var action = urlParameter('action', url);
+        if (action == "") {
+            url += '&action=' + thispage;
+        }
+        parent = $(this).parent();
+        parent.html(busyImage);
+        url = url.replace(/page=/, 'origpage=');
+        //  alert(url+'&ajaxed=true&page=pageaction');
+        parent.load(url + '&ajaxed=true&page=pageaction');
+        return false;
     });
-    $(".tabbed1").tabs();
-  }
-  
-  $("#subjectinput").focus(function() {
-    if (this.value == '(no subject)') {
-      this.value = "";
-    }
-  })
-  $("#subjectinput").blur(function() {
-    if (this.value == "") {
-      this.value = "(no subject)";
-      return;
-    }
-  });
-  $("#campaigntitleinput").focus(function() {
-    if (this.value == '(no title)') {
-      this.value = "";
-    }
-  })
-  $("#campaigntitleinput").blur(function() {
-    if (this.value == "") {
-      this.value = "(no title)";
-      return;
-    }
-  });
-  $("#remoteurlinput").focus(function() {
-    if (this.value == 'e.g. http://www.phplist.com/testcampaign.html') {
-      this.value = "";
-    }
-  })
-  $("#remoteurlinput").blur(function() {
-    if (this.value == "") {
-      this.value = "e.g. http://www.phplist.com/testcampaign.html";
-      return;
-    }
-    $("#remoteurlstatus").html(busyImage);
-    $("#remoteurlstatus").load("./?page=pageaction&action=checkurl&ajaxed=true&url="+this.value);
-  });
-  $("#filtertext").focus(function() {
-    if (this.value == ' --- filter --- ') {
-      this.value = "";
-    }
-  })
-  $("#filtertext").blur(function() {
-    if (this.value == "") {
-      this.value = " --- filter --- ";
-      return;
-    }
-  });  
 
-  $("input:radio[name=sendmethod]").change(function() {
-    if (this.value == "remoteurl") {
-      $("#remoteurl").show();
-      $("#messagecontent").hide();
-    } else {
-      $("#remoteurl").hide();
-      $("#messagecontent").show();
-    }
-  });
-  
-  $("a.savechanges").click(function() {
-    if (changed) {
-      document.sendmessageform.followupto.value = this.href;
-      document.location.hash=""
-      document.sendmessageform.submit();
-      return false;
-    }
-  });
-  
-  $("#criteriaSelect").change(function() {
-    var val = $("#criteriaSelect").val();
-    var operator = '';
-    switch (aT[val]) {
-      case 'checkbox':
-        $("#criteriaAttributeOperator").html('<input type="hidden" name="criteria_operator" value="is" />');
-        $("#criteriaAttributeValues").html('CHECKED <input type="radio" name="criteria_values" value="checked" /> UNCHECKED <input type="radio" name="criteria_values" value="unchecked" />');
-        break;
-      case 'checkboxgroup':
-      case 'select':
-      case 'radio':
-        $("#criteriaAttributeOperator").html('IS <input type="radio" name="criteria_operator" value="is" checked="checked" /> IS NOT <input type="radio" name="criteria_operator" value="isnot" />');
-        $("#criteriaAttributeValues").html(busyImage);
-        $("#criteriaAttributeValues").load("./?page=pageaction&ajaxed=true&action=attributevalues&name=criteria_values&type=multiselect&attid="+val);
-        break;
-      case 'date':
-        $("#criteriaAttributeOperator").html('IS <input type="radio" name="criteria_operator" value="is" checked="checked" /> IS NOT <input type="radio" name="criteria_operator" value="isnot" /> IS BEFORE <input type="radio" name="criteria_operator" value="isbefore" /> IS AFTER <input type="radio" name="criteria_operator" value="isafter" />');
-        $("#criteriaAttributeValues").html('<input type="text" id="datepicker" name="criteria_values" size="30"/>');
-        $("#datepicker").datepicker({dateFormat: 'yy-mm-dd' });
-        break;
-      default:
-        $("#criteriaAttributeOperator").html('');
-        $("#criteriaAttributeValues").html('');
-        break;
-    }
-  });
-
-  $("#initialadminpassword").keyup(function() {
-    if (this.value.length >= 8) {
-      $("#initialisecontinue").removeAttr('disabled');
-    } else if (this.value.length < 8) {
-      $("#initialisecontinue").attr('disabled', 'disabled');
-    }
-  });
-  $("#initialiseform").submit(function() {
-    $("#dialog").dialog({
-      minHeight: 400,
-      width: 600,
-      modal: true
+    $("input:checkbox.checkallcheckboxes").click(function () {
+        if (this.checked) {
+            $("input[type=checkbox]:not(:checked)").each(function () {
+                this.checked = true;
+            });
+        } else {
+            $("input[type=checkbox]:checked").each(function () {
+                this.checked = false;
+            });
+        }
     });
-    $("#dialog").html('<div class="openhelpimage">Initialising phpList, please wait.<br/>'+busyImage+'</div>');
-  });
-  
-  // export page
-  $("input:radio[name=column]").change(function() {
-    if (this.value == 'nodate') {
-      $("#exportdates").hide();
-    } else {
-      $("#exportdates").show();
+
+    var stop = false;
+
+    if ($.fn.accordion) {
+        $(".accordion").accordion({
+            autoHeight: false,
+            navigation: true,
+            collapsible: true
+        });
     }
-  });
-  
-  $("#processexport").click(function() {
-    // for export, refresh underlying page, to get a new security token
-    setTimeout("refreshExport()",10000);
-  })
 
-  $("#selectallcheckbox").click(function() {
-     $(':checkbox').prop('checked', this.checked);
-  })
+    $(".opendialog").click(function () {
+        openHelpDialog(this.href);
+        return false;
+    });
+    $(".helpdialog").click(function () {
+        openHelpDialog(this.href);
+        return false;
+    });
+    $(".closedialog").click(function () {
+        $("#dialog").dialog('close');
+    });
 
-  //fade out 'actionresult' user feedback
-  $('.actionresult').delay(4000).fadeOut(4000); 
-  //fade out 'result' user feedback
-  $('.result').delay(4000).fadeOut(4000); 
+    //dropbuttons
+    $("div.dropButton img.arrow").click(function () {
+        submenu = $(this).parent().parent().find("div.submenu");
+        if (submenu.css('display') == "block") {
+            submenu.hide();
+            $(this).attr('src', menuArrowImagesrc);
+        } else {
+            submenu.fadeIn();
+            $(this).attr('src', menuArrowActiveImagesrc);
+        }
+        return false;
+    });
+
+    /* hmm, doesn't work yet, but would be nice at some point
+     $("#emailsearch").autocomplete({
+     source: "?page=pageaction&ajaxed=true&action=searchemail",
+     minLength: 2,
+     select: function(event, ui) {
+     log(ui.item ? ("Selected: " + ui.item.value + " aka " + ui.item.id) : "Nothing selected, input was " + this.value);
+     }
+     });
+     */
+
+    if ($.fn.tabs) {
+        $(".tabbed").tabs({
+            //http://jqueryui.com/upgrade-guide/1.9/#deprecated-ajaxoptions-and-cache-options-added-beforeload-event
+            ajaxOptions: {
+                error: function (xhr, status, index, anchor) {
+                    $(anchor.hash).html("Error fetching page");
+                }
+            }
+        });
+        $(".tabbed1").tabs();
+    }
+
+    $("#subjectinput").focus(function () {
+        if (this.value == '(no subject)') {
+            this.value = "";
+        }
+    })
+    $("#subjectinput").blur(function () {
+        if (this.value == "") {
+            this.value = "(no subject)";
+            return;
+        }
+    });
+    $("#campaigntitleinput").focus(function () {
+        if (this.value == '(no title)') {
+            this.value = "";
+        }
+    })
+    $("#campaigntitleinput").blur(function () {
+        if (this.value == "") {
+            this.value = "(no title)";
+            return;
+        }
+    });
+    $("#remoteurlinput").focus(function () {
+        if (this.value == 'e.g. http://www.phplist.com/testcampaign.html') {
+            this.value = "";
+        }
+    })
+    $("#remoteurlinput").blur(function () {
+        if (this.value == "") {
+            this.value = "e.g. http://www.phplist.com/testcampaign.html";
+            return;
+        }
+        $("#remoteurlstatus").html(busyImage);
+        $("#remoteurlstatus").load("./?page=pageaction&action=checkurl&ajaxed=true&url=" + this.value);
+    });
+    $("#filtertext").focus(function () {
+        if (this.value == ' --- filter --- ') {
+            this.value = "";
+        }
+    })
+    $("#filtertext").blur(function () {
+        if (this.value == "") {
+            this.value = " --- filter --- ";
+            return;
+        }
+    });
+
+    $("input:radio[name=sendmethod]").change(function () {
+        if (this.value == "remoteurl") {
+            $("#remoteurl").show();
+            $("#messagecontent").hide();
+        } else {
+            $("#remoteurl").hide();
+            $("#messagecontent").show();
+        }
+    });
+
+    $("a.savechanges").click(function () {
+        if (changed) {
+            document.sendmessageform.followupto.value = this.href;
+            document.location.hash = ""
+            document.sendmessageform.submit();
+            return false;
+        }
+    });
+
+    $("#criteriaSelect").change(function () {
+        var val = $("#criteriaSelect").val();
+        var operator = '';
+        switch (aT[val]) {
+            case 'checkbox':
+                $("#criteriaAttributeOperator").html('<input type="hidden" name="criteria_operator" value="is" />');
+                $("#criteriaAttributeValues").html('CHECKED <input type="radio" name="criteria_values" value="checked" /> UNCHECKED <input type="radio" name="criteria_values" value="unchecked" />');
+                break;
+            case 'checkboxgroup':
+            case 'select':
+            case 'radio':
+                $("#criteriaAttributeOperator").html('IS <input type="radio" name="criteria_operator" value="is" checked="checked" /> IS NOT <input type="radio" name="criteria_operator" value="isnot" />');
+                $("#criteriaAttributeValues").html(busyImage);
+                $("#criteriaAttributeValues").load("./?page=pageaction&ajaxed=true&action=attributevalues&name=criteria_values&type=multiselect&attid=" + val);
+                break;
+            case 'date':
+                $("#criteriaAttributeOperator").html('IS <input type="radio" name="criteria_operator" value="is" checked="checked" /> IS NOT <input type="radio" name="criteria_operator" value="isnot" /> IS BEFORE <input type="radio" name="criteria_operator" value="isbefore" /> IS AFTER <input type="radio" name="criteria_operator" value="isafter" />');
+                $("#criteriaAttributeValues").html('<input type="text" id="datepicker" name="criteria_values" size="30"/>');
+                $("#datepicker").datepicker({dateFormat: 'yy-mm-dd'});
+                break;
+            default:
+                $("#criteriaAttributeOperator").html('');
+                $("#criteriaAttributeValues").html('');
+                break;
+        }
+    });
+
+    $("#initialadminpassword").keyup(function () {
+        if (this.value.length >= 8) {
+            $("#initialisecontinue").removeAttr('disabled');
+        } else if (this.value.length < 8) {
+            $("#initialisecontinue").attr('disabled', 'disabled');
+        }
+    });
+    $("#initialiseform").submit(function () {
+        $("#dialog").dialog({
+            minHeight: 400,
+            width: 600,
+            modal: true
+        });
+        $("#dialog").html('<div class="openhelpimage">Initialising phpList, please wait.<br/>' + busyImage + '</div>');
+    });
+
+    // export page
+    $("input:radio[name=column]").change(function () {
+        if (this.value == 'nodate') {
+            $("#exportdates").hide();
+        } else {
+            $("#exportdates").show();
+        }
+    });
+
+    $("#processexport").click(function () {
+        // for export, refresh underlying page, to get a new security token
+        setTimeout("refreshExport()", 10000);
+    })
+
+    $("#selectallcheckbox").click(function () {
+        $(':checkbox').prop('checked', this.checked);
+    })
+
+    //fade out 'actionresult' user feedback
+    $('.actionresult').delay(4000).fadeOut(4000);
+    //fade out 'result' user feedback
+    $('.result').delay(4000).fadeOut(4000);
 
 
 //  $("#processqueueoutput").html('Processing queue, please wait<script type="text/javascript">alert(document.location)</script>');
-  $("#spinner").html(busyImage);
-  
-  $("#stopqueue").click(function() {
-    $("#processqueueoutput").html('Processing cancelled');
-    $("#spinner").html('&nbsp;');    
-    $("#stopqueue").hide();    
-    $("#resumequeue").show();    
-  });
-  
-  $(".updatepluginbutton").click(function() {
-    if (!confirm("Are you sure you want to update this plugin? \nphpList does not currently check on compatibility of the update.\nThis will just fetch the latest version.\nPlease verify before upgrading.")) {
-        return false;
-    }
-    return true;
-  });
+    $("#spinner").html(busyImage);
 
-  var docurl = document.location.search;
-  document.cookie="browsetrail="+escape(docurl);
+    $("#stopqueue").click(function () {
+        $("#processqueueoutput").html('Processing cancelled');
+        $("#spinner").html('&nbsp;');
+        $("#stopqueue").hide();
+        $("#resumequeue").show();
+    });
 
-  setInterval("autoSave();",120000); // once every two minutes should suffice
-  
+    $(".updatepluginbutton").click(function () {
+        if (!confirm("Are you sure you want to update this plugin? \nphpList does not currently check on compatibility of the update.\nThis will just fetch the latest version.\nPlease verify before upgrading.")) {
+            return false;
+        }
+        return true;
+    });
+
+    var docurl = document.location.search;
+    document.cookie = "browsetrail=" + escape(docurl);
+
+    setInterval("autoSave();", 120000); // once every two minutes should suffice
+
     // tick all the boxes in a category.
-    $('li.selectallcategory').on('click', function(){
-      if($(this).find('input[type=checkbox]').attr('id').match('all-lists')) {
-        var ul = $(this).parent();
-        var lists = ul.parent().find('li');
+    $('li.selectallcategory').on('click', function () {
+        if ($(this).find('input[type=checkbox]').attr('id').match('all-lists')) {
+            var ul = $(this).parent();
+            var lists = ul.parent().find('li');
 
-        checkAllBoxes(lists.find('input[id^=all-lists]').prop('checked'), lists);
-      }
+            checkAllBoxes(lists.find('input[id^=all-lists]').prop('checked'), lists);
+        }
     });
 
     // @TODO, only set when needed
-    setInterval(getServerTime,30000);
+    setInterval(getServerTime, 30000);
 
-/* future dev
-  $("#listinvalid").load("./?page=pageaction&action=listinvalid&ajaxed=true",function() {
- //  alert("Loaded")
-  });
-  $("#refreshCriteria").click(refreshCriteriaList);
-  
-  $("#addcriterionbutton").click(function() {
-    $("#addcriterionbutton").addClass('disabled');
-    var request = document.location.search+'&'+$("#sendmessageform").serialize();
-    var attr = urlParameter('criteria_attribute',request);
-    if (attr == '') {
-      alert('Select an attribute to add');
-      return false;
-    };
-    var vals = urlParameter('criteria_values',request);
-    var arrVals = urlParameter('criteria_values[]',request);
-    if (vals == '' && arrVals) {
-      alert('Select a value to add');
-      return false;
-    };
-    
-    request = request.replace(/\?/,'');
-    request = request.replace(/page=/,'origpage=');
-    request = './?page=pageaction&action=storemessage&'+request;
-    alert(request);
-    $("#existingCriteria").html(busyImage);
- //   $("#hiddendiv").load(request);
- //   $("#sendmessageform").submit();
- //   setTimeout("refreshCriteriaList()",5000);
+    /* future dev
+     $("#listinvalid").load("./?page=pageaction&action=listinvalid&ajaxed=true",function() {
+     //  alert("Loaded")
+     });
+     $("#refreshCriteria").click(refreshCriteriaList);
 
-//    refreshCriteriaList();
-    return true;
-  });
-*/
+     $("#addcriterionbutton").click(function() {
+     $("#addcriterionbutton").addClass('disabled');
+     var request = document.location.search+'&'+$("#sendmessageform").serialize();
+     var attr = urlParameter('criteria_attribute',request);
+     if (attr == '') {
+     alert('Select an attribute to add');
+     return false;
+     };
+     var vals = urlParameter('criteria_values',request);
+     var arrVals = urlParameter('criteria_values[]',request);
+     if (vals == '' && arrVals) {
+     alert('Select a value to add');
+     return false;
+     };
+
+     request = request.replace(/\?/,'');
+     request = request.replace(/page=/,'origpage=');
+     request = './?page=pageaction&action=storemessage&'+request;
+     alert(request);
+     $("#existingCriteria").html(busyImage);
+     //   $("#hiddendiv").load(request);
+     //   $("#sendmessageform").submit();
+     //   setTimeout("refreshCriteriaList()",5000);
+
+     //    refreshCriteriaList();
+     return true;
+     });
+     */
 
 });
 
 function allDone(text) {
-  if (!text) {
-    text = 'All done';
-  }
-  $("#processqueueoutput").html('<span class="info" style="padding: 40px">'+text+'</span>');
-  $("#spinner").html('&nbsp;');    
-  $("#stopqueue").hide();    
-  $("#resumequeue").show();
-  $("#progressmeter").hide();   
+    if (!text) {
+        text = 'All done';
+    }
+    $("#processqueueoutput").html('<span class="info" style="padding: 40px">' + text + '</span>');
+    $("#spinner").html('&nbsp;');
+    $("#stopqueue").hide();
+    $("#resumequeue").show();
+    $("#progressmeter").hide();
 }
 
 var overallTotal = 0;
 var overallSent = 0;
 
 /* this one keeps track of the total between multiple processqueue runs */
-$.fn.updateSendProgress = function() {
-  var args = arguments[0].split(',') || {}; 
-  var total = parseInt(args[1]);
-  var done = parseInt(args[0]);
-  if (total > overallTotal) {    overallTotal = total;  } else {    total = overallTotal;  }
-  if (done > 0) {
-    overallSent += done;
-  }
-  $.fn.updateProgress(overallSent,overallTotal);
-}
-
-$.fn.updateProgress = function() {
-  if ($.isNumeric(arguments[0])) {
-    var total = parseInt(arguments[1]);
-    var done = parseInt(arguments[0]);
-  } else {
-    var args = arguments[0].split(',') || {}; 
+$.fn.updateSendProgress = function () {
+    var args = arguments[0].split(',') || {};
     var total = parseInt(args[1]);
     var done = parseInt(args[0]);
-  }
-  var perc;
-  if (total == 0) {
-    perc = 0;
-  } else {
-    perc = parseInt((done / total) * 100);
-  }
-  $("#progresscount").html(done + ' / '+ total);
-  $("#progresscount").show();
-  $("#progressbar" ).progressbar({max: 100, value: +perc});
+    if (total > overallTotal) {
+        overallTotal = total;
+    } else {
+        total = overallTotal;
+    }
+    if (done > 0) {
+        overallSent += done;
+    }
+    $.fn.updateProgress(overallSent, overallTotal);
+}
+
+$.fn.updateProgress = function () {
+    if ($.isNumeric(arguments[0])) {
+        var total = parseInt(arguments[1]);
+        var done = parseInt(arguments[0]);
+    } else {
+        var args = arguments[0].split(',') || {};
+        var total = parseInt(args[1]);
+        var done = parseInt(args[0]);
+    }
+    var perc;
+    if (total == 0) {
+        perc = 0;
+    } else {
+        perc = parseInt((done / total) * 100);
+    }
+    $("#progresscount").html(done + ' / ' + total);
+    $("#progresscount").show();
+    $("#progressbar").progressbar({max: 100, value: +perc});
 };
 
 
@@ -1508,14 +1538,14 @@ $.fn.updateProgress = function() {
  */
 
 function deleteRec(url) {
-	if (confirm("Are you sure you want to delete this record?")) {
-		document.location = url;
-	}
+    if (confirm("Are you sure you want to delete this record?")) {
+        document.location = url;
+    }
 }
 
 // @@TODO rewrite opening in pop-over
-function viewImage(url,w,h) {
-   alert("needs rewriting");
+function viewImage(url, w, h) {
+    alert("needs rewriting");
 }
 
 /*phpList3/public_html/lists/admin/ui/dressprow/js/jquery.tablednd.js*/ /**
