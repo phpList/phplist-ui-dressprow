@@ -1,13 +1,14 @@
 <?php
 
-if (!isset($_GET['page']) || (isset($_GET['page']) && in_array($_GET['page'], array('home', 'about', 'dashboard', 'community','login')))) {
+if (true || !isset($_GET['page']) || (isset($_GET['page']) && in_array($_GET['page'], array('home', 'about', 'dashboard', 'community','login')))) {
     $news = '';
-    
+
     $max = 10;
-    if (empty($_SESSION['adminloggedin'])) { 
+    if (empty($_SESSION['adminloggedin']) ) {
       $max = 3; // show last 3 only on login page
+    } elseif (isset($_GET['page']) && !in_array($_GET['page'], array('home', 'about', 'dashboard', 'community','login'))) {
+      $max = 3; // only 3 on most pages
     }
-    
     include dirname(__FILE__).'/onyx-rss.php';
     $rss = new ONYX_RSS();
     $rss->setDebugMode(false);
