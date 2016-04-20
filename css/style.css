@@ -1,8 +1,8 @@
 /* File:/lists/admin/ui/dressprow/css/style.css */
 
-/******************************* 
+/*******************************
 
-TABLE OF CONTENT 
+TABLE OF CONTENT
 
  1. GENERAL STYLES
  2. STRUCTURE DIVS
@@ -28,7 +28,7 @@ body													{ font:13px/1.5 Arial, Helvetica, sans-serif; padding:0; margin
 body.nobackground										{ font-size: 14px; background:url('../../dressprow/images/spacer.png') repeat-x; }
 hr														{ border:0; border-style:solid; border-top-width:1px; clear:both; height:0; margin:10px 0px}
 table													{ /* this put same width on all columns for break-word: table-layout:fixed; */ width:100%}
-table table												{ width:auto}	
+table table												{ width:auto}
 td,th													{ overflow:hidden; word-wrap:break-word}
 td .button												{ word-wrap:normal}
 td.dataname												{ width:120px; font-weight:bold; font-size:12px}
@@ -194,7 +194,7 @@ div.dropButton .submenu a 								{ line-height:12px; padding:7px; margin-top:5p
 div.dropButton .submenu a:hover 						{ margin-top:5px}
 #webblertabs ul li, #webblertabs ul li a                { width:170px; margin:0px; padding:1px 0px; border:none; clear:both; font-size:15px; line-height:15px; -webkit-border-radius:6px; -moz-border-radius:6px; border-radius:6px}
 #webblertabs ul li:hover,
-div.dropButton .submenu a:hover							{ border:0} 
+div.dropButton .submenu a:hover							{ border:0}
 
 /* minitabs (webblertabs inside "minitabs" div)  */
 .minitabs                                               { margin:0px auto 5px;padding:0px}
@@ -211,14 +211,14 @@ div.dropButton .submenu a:hover							{ border:0}
 .sendtabs_container										{ width:100%; text-align:center; margin-bottom:-2px !important;max-height:50px}
 .sendtabs_container .nexttab							{ cursor:pointer; float:right; padding:5px; margin-top:10px;vertical-align: top;height:15px}
 .sendtabs_container .prevtab							{ cursor:pointer; float:left; padding:5px; margin-top:10px;vertical-align: top;height:15px}
-.sendtabs_container .prevtab.disabled,				
+.sendtabs_container .prevtab.disabled,
 .sendtabs_container .nexttab.disabled					{ visibility:hidden}
 #sendtabs ul.sendcampaign li							{ width:auto !important; margin:1px}
 #sendtabs ul.sendcampaign li a							{ -webkit-border-top-right-radius:10px; -webkit-border-top-left-radius:10px; -moz-border-radius-topright:10px; -moz-border-radius-topleft:10px; border-top-right-radius:10px; border-top-left-radius:10px; font-size:100%; width:100px !important}
 #sendtabs ul.sendcampaign li.current a					{ font-size:100%}
 #sendtabs ul li a 										{ border:0px; font-size:12px !important}
 #sendtabs ul li.current a, #sendtabs ul li a:hover		{ text-decoration:none}
-.sendtabs_container .prevtab:hover, 
+.sendtabs_container .prevtab:hover,
 .sendtabs_container .nexttab:hover						{ zoom:1; filter:alpha(opacity=70); opacity:0.7}
 ul.sendcampaign											{ list-style: none}
 #metadata                                               { margin-bottom:20px }
@@ -262,8 +262,9 @@ span.edit-list a.button									{ -webkit-border-radius:4px; -moz-border-radius:
 tr .listingname a:hover, tr .listingelement a:hover		{ text-decoration:none}
 .panel table td											{ border-width:1px; border-style:solid; padding:4px}
 .panel table th											{ text-align:center; font-weight:bold; background:url('../../dressprow/images/header-bg.gif') repeat-x; border-width:1px; border-style:solid; }
-.memberCount                                            { color: #0A0}
-.unconfirmedCount                                       { color: #C55}
+.memberCount                                            { color: #0A0; }
+.unconfirmedCount                                       { color: #C55; }
+.blacklistedCount                                       { color: #FFA500; }
 
 /* drag and drop */
 .save													{ background:url('../../dressprow/images/16x16/alert.png'); height:16px; width:16px; display:inline-block; margin-right:5px}
@@ -304,7 +305,7 @@ span.view a.button,span.stats a.button, span.delete a.confirm,
 span.resend a.button,span.suspend a.button, span.send-list a.button,
 span.marksent a.button,.row1 span.viewusers a.button,
 span.button a.opendialog span.view,span.add_member a	{ vertical-align: middle;width:16px; height:16px; overflow:hidden; text-indent:-9999px; display:inline-block}
-#dashboardcampaign, #dashboardsubscribers, 
+#dashboardcampaign, #dashboardsubscribers,
 #dashboardstatistics 									{ display:inline}
 
 
@@ -315,7 +316,7 @@ span.button a.opendialog span.view,span.add_member a	{ vertical-align: middle;wi
 #import_list a											{ background-image:url('../../dressprow/images/32x32/import-txt.png') }
 #import_csv a											{ background-image:url('../../dressprow/images/32x32/import-csv.png') }
 
-div.accordion tr td.listingname a,						
+div.accordion tr td.listingname a,
 div.accordion tr .listingname a.listingname:hover		{ background-position:50% 10px; background-repeat:no-repeat}
 tr.config-link td.listingname a,
 .dashboard_button .configuration a						{ background-image:url('../../dressprow/images/32x32/config.png')}
@@ -351,7 +352,7 @@ tr.view-log td.listingname a							{ background-image:url('../../dressprow/image
 
 /* initialise form */
 #initialiseform input[type="submit"]                      { border-color:#000}
-#initialiseform input[type="submit"]:disabled             { border-color:#CCC} 
+#initialiseform input[type="submit"]:disabled             { border-color:#CCC}
 
 
 /* login page */
@@ -365,12 +366,12 @@ form#forgotpassword-form div.login						{ padding-left:50px; background:url('../
 form#forgotpassword-form p								{ margin:0px; padding:0px}
 form#forgotpassword-form input[type="text"]				{ float:left; max-width:70% !important; margin:5px 5px 10px 0px; height:20px; padding:2px}
 form#forgotpassword-form input[type="submit"]			{ float:left; margin:4px; height:27px; padding:6px 10px}
-.loginPassUpdate input[type="text"], 
+.loginPassUpdate input[type="text"],
 .loginPassUpdate input[type="password"] 				{ width:200px}
 
 /* pages: import1, import2, importadmin, admindetails, bouncerules, adminattributes,spageedit */
-table.import1, table.importadmin, table.importcsvMain, 
-table.bouncerulesAction, table.adminDetails, 
+table.import1, table.importadmin, table.importcsvMain,
+table.bouncerulesAction, table.adminDetails,
 table.attributeNew,table.spageeditListing				{ width:auto; border-width:0px !important; border-style:solid !important}
 
 /* bounces page */
@@ -398,7 +399,7 @@ table.viewrssListing td									{ padding-right:10px}
 .panel table.setupMain td								{ border:0px}
 
 /* members page */
-body.members .listingelement .no, 
+body.members .listingelement .no,
 body.members .listingelement .yes 						{ float:right; margin-right:10px}
 table.membersProcess select								{ width:100%; margin-bottom:0px}
 table.membersProcess tr td								{ padding:4px !important}
@@ -437,7 +438,7 @@ body.users .usersFind .reset							{ margin-left:-50%}
 body.users .usersFind input[type=text]					{ width:250px !important; float:left; margin-right:20px}
 body.users div#add-csv-button,
 body.users div#add-user-button							{ display:inline-block; }
-body.users .listingelement .no, 
+body.users .listingelement .no,
 body.users .listingelement .yes							{ float:right; margin-right:10px}
 .usersFind td											{ border:0px !important}
 
@@ -490,12 +491,12 @@ div.row-value .delete									{ float:right; margin-left:10px}
 .panel .step-nav a.next 								{ background:url('../../dressprow/images/next.png') no-repeat left top; padding:2px 2px 2px 20px}
 .panel .step-nav a.back 								{ background:url('../../dressprow/images/back.png') no-repeat right top; padding:2px 20px 2px 2px; float:left}
 .panel .step-nav a.back, .panel .step-nav a.next		{ border-width:4px; border-style:solid; display:inline-block; text-transform:uppercase; cursor:pointer; font-size:14px;	-webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px}
-.panel .step-nav a.back:hover, 
+.panel .step-nav a.back:hover,
 .panel .step-nav a.next:hover							{ text-decoration:none}
 body.send .field										{ margin-bottom:10px}
 body.send .field label									{ display:block; font-weight:bold}
 body.send .sendNotify label								{ display:block; width:100%}
-body.send .panel .content div							{ margin:5px} 
+body.send .panel .content div							{ margin:5px}
 body.send textarea										{ width:88%}
 #addtoqueue												{ margin:10px; padding:10px; border-width:1px; border-style:solid}
 #addtoqueue .missing									{ padding:15px; padding-left:25px; background:url('../../dressprow/images/16x16/alert.png')  3px center no-repeat; border-width:1px; border-style:solid}
