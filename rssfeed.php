@@ -9,7 +9,7 @@ $max = 10;
 // Show fewer news items for certain pages
 if (
     empty($_SESSION['adminloggedin'])
-    || (isset($_GET['page']) && !in_array($_GET['page'], array('home', 'about', 'dashboard', 'community','login')))
+    || isset($_GET['page']) && !in_array($_GET['page'], array('home', 'about', 'dashboard', 'community','login'))
     ) {
     // Reduce max news items count
     $max = 3;
@@ -39,7 +39,7 @@ if ($parseresult) {
             $date = str_replace($regs[0], '', $date);
         }
 
-        ## remove the '<p>&nbsp;</p>' in the descriptions
+        // remove the '<p>&nbsp;</p>' in the descriptions
         $desc = $item['description'];
         $desc = str_replace('<p>&nbsp;</p>', '', $desc);
         $desc = '';
