@@ -54,33 +54,38 @@ class ONYX_RSS
    // Forward compatibility with PHP v.5
    // http://www.phpvolcano.com/eide/php5.php?page=start
 
-   public function __construct()
-   {
-       $this->conf = array();
-       $this->conf['error'] = '<br /><strong>Error on line %s of '.__FILE__.'</strong>: %s<br />';
-       $this->conf['cache_path'] = dirname(__FILE__);
-       $this->conf['cache_time'] = 180;
-       $this->conf['debug_mode'] = true;
-       $this->conf['fetch_mode'] = ONYX_FETCH_ASSOC;
-       $this->lasterror = '';
+    public function __construct()
+    {
+        $this->conf = array();
+        $this->conf['error'] = '<br /><strong>Error on line %s of '.__FILE__.'</strong>: %s<br />';
+        $this->conf['cache_path'] = dirname(__FILE__);
+        $this->conf['cache_time'] = 180;
+        $this->conf['debug_mode'] = true;
+        $this->conf['fetch_mode'] = ONYX_FETCH_ASSOC;
+        $this->lasterror = '';
+        $this->context = stream_context_create(array(
+            'http'=>array(
+                'timeout' => 5.0
+            )
+        ));
 
-       if (!function_exists('xml_parser_create')) {
-           $this->raiseError((__LINE__ - 2), ONYX_ERR_NO_PARSER);
+        if (!function_exists('xml_parser_create')) {
+            $this->raiseError((__LINE__ - 2), ONYX_ERR_NO_PARSER);
 
-           return false;
-       }
+            return false;
+        }
 
-       $this->parser = @xml_parser_create();
-       if (!is_resource($this->parser)) {
-           $this->raiseError((__LINE__ - 3), ONYX_ERR_NO_PARSER);
+        $this->parser = @xml_parser_create();
+        if (!is_resource($this->parser)) {
+            $this->raiseError((__LINE__ - 3), ONYX_ERR_NO_PARSER);
 
-           return false;
-       }
-       xml_set_object($this->parser, $this);
-       xml_parser_set_option($this->parser, XML_OPTION_CASE_FOLDING, false);
-       xml_set_element_handler($this->parser, 'tag_open', 'tag_close');
-       xml_set_character_data_handler($this->parser, 'cdata');
-   }
+            return false;
+        }
+        xml_set_object($this->parser, $this);
+        xml_parser_set_option($this->parser, XML_OPTION_CASE_FOLDING, false);
+        xml_set_element_handler($this->parser, 'tag_open', 'tag_close');
+        xml_set_character_data_handler($this->parser, 'cdata');
+    }
 
     public function parse($uri, $file = false, $time = false, $local = false)
     {
@@ -102,9 +107,10 @@ class ONYX_RSS
                 $time = $this->conf['cache_time'];
             }
             $this->rss['cache_age'] = file_exists($file) ? ceil((time() - filemtime($file)) / 60) : 0;
+            $cacheHasExpired = $time <= $this->rss['cache_age'];
 
             clearstatcache();
-            if (!$local && file_exists($file)) {
+            if (!$local && file_exists($file) && $cacheHasExpired) {
                 if (($mod = $this->mod_time($uri)) === false) {
                     $this->raiseError((__LINE__ - 2), ONYX_ERR_INVALID_URI);
 
@@ -115,12 +121,13 @@ class ONYX_RSS
             } elseif ($local) {
                 $mod = (file_exists($file) && ($m = filemtime($uri))) ? $m : time() + 3600;
             }
+            $feedHasNewContent = $mod >= (time() - ($this->rss['cache_age'] * 60));
         }
         if (!$file ||
            ($file && !file_exists($file)) ||
-           ($file && file_exists($file) && $time <= $this->rss['cache_age'] && $mod >= (time() - ($this->rss['cache_age'] * 60)))) {
+           ($file && file_exists($file) && $cacheHasExpired && $feedHasNewContent)) {
             clearstatcache();
-            if (!($fp = @fopen($uri, 'r'))) {
+            if (!($fp = @fopen($uri, 'r', false, $this->context))) {
                 $this->raiseError((__LINE__ - 2), ONYX_ERR_INVALID_URI);
 
                 return false;
@@ -146,6 +153,10 @@ class ONYX_RSS
                 $this->rss['cache_age'] = 0;
             }
         } else {
+            if ($cacheHasExpired) {
+                touch($file);
+                $this->rss['cache_age'] = 0;
+            }
             clearstatcache();
             if (!($fp = @fopen($file, 'r'))) {
                 $this->raiseError((__LINE__ - 2), 'Could not read contents of cache file (<em>'.$cache_file.'</em>).');
@@ -345,7 +356,7 @@ class ONYX_RSS
    public function mod_time($uri)
    {
        if (function_exists('version_compare') && version_compare(phpversion(), '4.3.0') >= 0) {
-           if (!($fp = @fopen($uri, 'r'))) {
+           if (!($fp = fopen($uri, 'r', false, $this->context))) {
                return false;
            }
 
