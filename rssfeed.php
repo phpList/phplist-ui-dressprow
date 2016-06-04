@@ -2,10 +2,10 @@
 
 /**
  * Build the news div element from the rss feed items.
- * 
+ *
  * @param ONYX_RSS $rss onyx-rss instance
  * @param int      $max the maximum number of feed items to return
- * 
+ *
  * @return string the generated html or an empty string
  */
 function buildNews($rss, $max)
@@ -33,7 +33,7 @@ function buildNews($rss, $max)
             $date = str_replace($regs[0], '', $date);
         }
 
-        ## remove the '<p>&nbsp;</p>' in the descriptions
+        // remove the '<p>&nbsp;</p>' in the descriptions
         $desc = $item['description'];
         $desc = str_replace('<p>&nbsp;</p>', '', $desc);
         $desc = '';
@@ -44,7 +44,7 @@ function buildNews($rss, $max)
     </li>';
     }
 
-    $format = <<<END
+    $format = <<<'END'
 <div id="newsfeed" class="menutableright block">
 <h3>%s</h3>
 <ul>%s</ul>
@@ -54,7 +54,7 @@ END;
     return sprintf($format, s('phpList community news'), $news);
 }
 
-/**
+/*
  * Generate the short and long news sidebars from an rss feed then cache
  * in the session.
  */
@@ -71,8 +71,8 @@ if (isset($_SESSION['news'][$newsSize])) {
 
     return;
 }
-    
-include dirname(__FILE__) . '/onyx-rss.php';
+
+include dirname(__FILE__).'/onyx-rss.php';
 $rss = new ONYX_RSS();
 $rss->setDebugMode(false);
 $rss->setCachePath($GLOBALS['tmpdir']);
