@@ -311,14 +311,17 @@ class ONYX_RSS
 
    //private function raiseError($line, $err)
 
-   public function raiseError($line, $err)
-   {
-       if ($this->conf['debug_mode']) {
-           printf($this->conf['error'], $line, $err);
-       } else {
-           $this->lasterror = $err;
-       }
-   }
+    public function raiseError($line, $err)
+    {
+        if ($this->conf['debug_mode']) {
+            // Format error message
+            $errorMsg = sprintf( $this->conf['error'], $line, $err );
+            // Raise phpList error
+            Error( $errorMsg );
+        } else {
+            $this->lasterror = $err;
+        }
+    }
 
     public function setCachePath($path)
     {
