@@ -21,7 +21,7 @@ include dirname(__FILE__).'/onyx-rss.php';
 $rss = new ONYX_RSS();
 
 // Disable debugging output unless we are running in test mode
-if( ! TEST ) {
+if( ! DEVVERSION ) {
     $rss->setDebugMode(false);
 }
 
