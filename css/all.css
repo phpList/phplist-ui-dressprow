@@ -2219,7 +2219,7 @@ div#menuTop li li li li:hover ul {
 /* End CSS Popout Menu */
 
 
-/*phpList3/public_html/lists/admin/ui/dressprow/css/base.css*/ /*
+/*phplist-ui-dressprow/css/base.css*/ /*
 * Skeleton V1.1
 * Copyright 2011, Dave Gamache
 * www.getskeleton.com
@@ -2450,7 +2450,7 @@ div#menuTop li li li li:hover ul {
   .hidden { display: none; }
 
 
-/*phpList3/public_html/lists/admin/ui/dressprow/css/layout.css*/ /*
+/*phplist-ui-dressprow/css/layout.css*/ /*
 * Skeleton V1.1
 * Copyright 2011, Dave Gamache
 * www.getskeleton.com
@@ -2513,7 +2513,7 @@ div#menuTop li li li li:hover ul {
 	    font-weight: normal;
 	    font-style: normal; }
 */
-/*phpList3/public_html/lists/admin/ui/dressprow/css/skeleton.css*/ /*
+/*phplist-ui-dressprow/css/skeleton.css*/ /*
 * Skeleton V1.1
 * Copyright 2011, Dave Gamache
 * www.getskeleton.com
@@ -2848,7 +2848,7 @@ border-bottom:1px dotted #ccc;
       height: 0;
     }
 
-/*phpList3/public_html/lists/admin/ui/dressprow/css/style.css*/ /* File:/lists/admin/ui/dressprow/css/style.css */
+/*phplist-ui-dressprow/css/style.css*/ /* File:/lists/admin/ui/dressprow/css/style.css */
 
 /*******************************
 
@@ -2917,6 +2917,7 @@ form .actions											{ border:0px}
 div.submit, p.button									{ margin:10px 0px}
 .shade1, .shade2										{ margin-bottom:5px; padding:1px; background:url("../../dressprow/images/header-bg.gif") repeat-x scroll 0 0}
 .show-on-mobile                                         {display:none}
+textarea,.cke                                           {max-width:100% !important}
 
 @media only screen and (max-width: 767px){
     .url                                                {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;display: inline-block;max-width: 170px}
@@ -3450,7 +3451,7 @@ body.templates span.button 								{ background-image:none; float:right; margin-
 
 /* End of /lists/admin/ui/dressprow/css/style.css */
 
-/*phpList3/public_html/lists/admin/ui/dressprow/css/gray.css*/ /* File:/lists/admin/ui/dressprow/css/gray.css */
+/*phplist-ui-dressprow/css/gray.css*/ /* File:/lists/admin/ui/dressprow/css/gray.css */
 
 
 /******************************* 
