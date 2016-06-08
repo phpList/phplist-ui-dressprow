@@ -1,41 +1,30 @@
 <?php
 
-// Initialise var for holding news items HTML
-$news = '';
+/**
+ * Build the news div element from the rss feed items.
+ * 
+ * @param ONYX_RSS $rss onyx-rss instance
+ * @param int      $max the maximum number of feed items to return
+ * 
+ * @return string the generated html or an empty string
+ */
+function buildNews($rss, $max)
+{
+    if ($rss->numItems() == 0) {
+        return '';
+    }
 
-// Set maximum number of news items to display
-$max = 10;
+    $news = '';
+    $count = 0;
+    // reset index so that feed items can be processed more than once
+    $rss->rss['output_index'] = -1;
 
-// Show fewer news items for certain pages
-if (
-    empty($_SESSION['adminloggedin'])
-    || isset($_GET['page']) && !in_array($_GET['page'], array('home', 'about', 'dashboard', 'community','login'))
-    ) {
-    // Reduce max news items count
-    $max = 3;
-}
-
-// Load Onxy RSS class file
-include dirname(__FILE__).'/onyx-rss.php';
-
-$rss = new ONYX_RSS();
-
-// Disable debugging output unless we are running in test mode
-if( ! DEVVERSION ) {
-    $rss->setDebugMode(false);
-}
-
-$rss->setCachePath($GLOBALS['tmpdir']);
-// Set expiry time to 24hrs (sets $rss->conf['cache_time'])
-$rss->setExpiryTime(1440);
-// Parse the RSS feed
-$parseresult = $rss->parse('https://www.phplist.org/newslist/feed/', 'phplistnews');
-// Set the counter to zero
-$count = 0;
-if ($parseresult) {
     while ($item = $rss->getNextItem()) {
         $count++;
-        if ($count > $max) break;
+
+        if ($count > $max) {
+            break;
+        }
         $date = $item['pubdate'];
         $date = str_replace('00:00:00 +0000', '', $date);
         $date = str_replace('00:00:00 +0100', '', $date);
@@ -44,7 +33,7 @@ if ($parseresult) {
             $date = str_replace($regs[0], '', $date);
         }
 
-        // remove the '<p>&nbsp;</p>' in the descriptions
+        ## remove the '<p>&nbsp;</p>' in the descriptions
         $desc = $item['description'];
         $desc = str_replace('<p>&nbsp;</p>', '', $desc);
         $desc = '';
@@ -54,12 +43,46 @@ if ($parseresult) {
     '.$desc.'
     </li>';
     }
+
+    $format = <<<END
+<div id="newsfeed" class="menutableright block">
+<h3>%s</h3>
+<ul>%s</ul>
+</div>
+END;
+
+    return sprintf($format, s('phpList community news'), $news);
 }
 
-if (!empty($news)) {
-    print '<div id="newsfeed" class="menutableright block">';
-    print '
-    <h3>'.s('phpList community news').'</h3>
-    <ul>'.$news.'</ul>';
-    print '</div>';
+/**
+ * Generate the short and long news sidebars from an rss feed then cache
+ * in the session.
+ */
+
+$newsSize = 'long';
+
+if (empty($_SESSION['adminloggedin'])
+    || (isset($_GET['page']) && !in_array($_GET['page'], array('home', 'about', 'dashboard', 'community','login')))) {
+    $newsSize = 'short';
+}
+
+if (isset($_SESSION['news'][$newsSize])) {
+    echo $_SESSION['news'][$newsSize];
+
+    return;
+}
+    
+include dirname(__FILE__) . '/onyx-rss.php';
+$rss = new ONYX_RSS();
+if( ! DEVVERSION ) {
+    $rss->setDebugMode(false);
+}
+$rss->setCachePath($GLOBALS['tmpdir']);
+$rss->setExpiryTime(1440);
+$parseresult = $rss->parse('https://www.phplist.org/newslist/feed/', 'phplistnews');
+
+if ($parseresult) {
+    $_SESSION['news']['short'] = buildNews($rss, 3);
+    $_SESSION['news']['long'] = buildNews($rss, 10);
+    echo $_SESSION['news'][$newsSize];
 }
