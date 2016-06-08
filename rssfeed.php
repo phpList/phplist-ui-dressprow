@@ -19,7 +19,12 @@ if (
 include dirname(__FILE__).'/onyx-rss.php';
 
 $rss = new ONYX_RSS();
-$rss->setDebugMode(false);
+
+// Disable debugging output unless we are running in test mode
+if( ! TEST ) {
+    $rss->setDebugMode(false);
+}
+
 $rss->setCachePath($GLOBALS['tmpdir']);
 // Set expiry time to 24hrs (sets $rss->conf['cache_time'])
 $rss->setExpiryTime(1440);
