@@ -90,13 +90,16 @@ class ONYX_RSS
         $this->rss['index'] = 0;
         $this->rss['output_index'] = -1;
         $this->data = array();
-
+        
+        // Check rss filename is set
         if ($file) {
+            // Check cache directory is writable
             if (!is_writable($this->conf['cache_path'])) {
                 $this->raiseError((__LINE__ - 2), ONYX_ERR_NOT_WRITEABLE);
 
                 return false;
             }
+            // Rewrite rss filename to full cached file path
             $file = str_replace('//', '/', $this->conf['cache_path'].'/'.$file);
             if (!$time) {
                 $time = $this->conf['cache_time'];
@@ -116,15 +119,21 @@ class ONYX_RSS
                 $mod = (file_exists($file) && ($m = filemtime($uri))) ? $m : time() + 3600;
             }
         }
+        
+        // If cache should not or cannot be used
         if (!$file ||
            ($file && !file_exists($file)) ||
            ($file && file_exists($file) && $time <= $this->rss['cache_age'] && $mod >= (time() - ($this->rss['cache_age'] * 60)))) {
             clearstatcache();
+            
+            // If remote feed cannot be opened
             if (!($fp = @fopen($uri, 'r'))) {
                 $this->raiseError((__LINE__ - 2), ONYX_ERR_INVALID_URI);
-
+                
                 return false;
             }
+            
+            // Read remote feed
             while ($chunk = fread($fp, 4096)) {
                 $parsedOkay = xml_parse($this->parser, $chunk, feof($fp));
                 if (!$parsedOkay && xml_get_error_code($this->parser) != XML_ERROR_NONE) {
@@ -309,16 +318,14 @@ class ONYX_RSS
         }
     }
 
-   //private function raiseError($line, $err)
-
-   public function raiseError($line, $err)
-   {
-       if ($this->conf['debug_mode']) {
-           printf($this->conf['error'], $line, $err);
-       } else {
-           $this->lasterror = $err;
-       }
-   }
+    public function raiseError($line, $err)
+    {
+        if ($this->conf['debug_mode']) {
+            printf($this->conf['error'], $line, $err);
+        } else {
+            $this->lasterror = $err;
+        }
+    }
 
     public function setCachePath($path)
     {
