@@ -273,6 +273,9 @@ tr .listingname a:hover, tr .listingelement a:hover		{ text-decoration:none}
 
 /******************************* 10. ICONS AND BUTTONS */
 
+a.action-button{line-height:1.5 !important;display:inline-block;padding:3px !important;text-align:center; }
+a.action-button::first-letter {text-transform:uppercase}
+
 /* login/logout buttons */
 #logged													{ float:left; margin-top:15px; float:right}
 #login, #logout											{ padding:2px 12px 4px 30px; border-width:1px; border-style:solid; -webkit-border-radius:15px; -moz-border-radius:15px; border-radius:15px}
