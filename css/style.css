@@ -264,8 +264,8 @@ tr .listingname a:hover, tr .listingelement a:hover		{ text-decoration:none}
 .panel table td											{ border-width:1px; border-style:solid; padding:4px}
 .panel table th											{ text-align:center; font-weight:bold; background:url('../../dressprow/images/header-bg.gif') repeat-x; border-width:1px; border-style:solid; }
 .memberCount                                            { color: #0A0; }
-.unconfirmedCount                                       { color: #C55; }
-.blacklistedCount                                       { color: #FFA500; }
+.unconfirmedCount                                       { color: #FFA500; }
+.blacklistedCount                                       { color: #C55; }
 
 /* drag and drop */
 .save													{ background:url('../../dressprow/images/16x16/alert.png'); height:16px; width:16px; display:inline-block; margin-right:5px}
