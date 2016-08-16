@@ -533,7 +533,12 @@ table.messagesendstats									{ float:right; margin-right:10px}
 #messagefilterform select								{ width:100px; float:left; margin:0px 3px;height:28px;padding:4px}
 #messagefilterform select.numppOptions					{ width:50px}
 #messagefilterform										{ border-width:1px;border-style:solid;padding:4px 8px;-webkit-border-radius:8px; -moz-border-radius:8px; border-radius:8px}
+/* REDUCE IMAGE WIDTH ON VIEW CAMPAIGN TO NOT BREAK TABLE*/
 body.message table.messageView td img { max-width:100% !important;height:auto !important}
+/* HIDE TABLES IN DESIGN EMAILS WHEN WIDTH EXCEED VIEW CAMPAIGN TABLE WIDTH */
+body.message div.panel .content{ overflow:hidden}
+/* REMOVE BACKGROUND COLOR ON TABLES inside MAILINGS DESING */
+body.message div.panel table.messageView table{ background-color:transparent}
 
 /* user page */
 table.userAdd .dataname									{ width:auto}
