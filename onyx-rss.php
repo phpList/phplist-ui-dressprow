@@ -95,6 +95,7 @@ class ONYX_RSS
         $this->rss['index'] = 0;
         $this->rss['output_index'] = -1;
         $this->data = array();
+        $mod = 0;
 
         if ($file) {
             if (!is_writable($this->conf['cache_path'])) {
