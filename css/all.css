@@ -2219,7 +2219,7 @@ div#menuTop li li li li:hover ul {
 /* End CSS Popout Menu */
 
 
-/*phplist-ui-dressprow/css/base.css*/ /*
+/*phpListThemes/phplist-ui-dressprow/css/base.css*/ /*
 * Skeleton V1.1
 * Copyright 2011, Dave Gamache
 * www.getskeleton.com
@@ -2450,7 +2450,7 @@ div#menuTop li li li li:hover ul {
   .hidden { display: none; }
 
 
-/*phplist-ui-dressprow/css/layout.css*/ /*
+/*phpListThemes/phplist-ui-dressprow/css/layout.css*/ /*
 * Skeleton V1.1
 * Copyright 2011, Dave Gamache
 * www.getskeleton.com
@@ -2513,7 +2513,7 @@ div#menuTop li li li li:hover ul {
 	    font-weight: normal;
 	    font-style: normal; }
 */
-/*phplist-ui-dressprow/css/skeleton.css*/ /*
+/*phpListThemes/phplist-ui-dressprow/css/skeleton.css*/ /*
 * Skeleton V1.1
 * Copyright 2011, Dave Gamache
 * www.getskeleton.com
@@ -2848,7 +2848,7 @@ border-bottom:1px dotted #ccc;
       height: 0;
     }
 
-/*phplist-ui-dressprow/css/style.css*/ /* File:/lists/admin/ui/dressprow/css/style.css */
+/*phpListThemes/phplist-ui-dressprow/css/style.css*/ /* File:/lists/admin/ui/dressprow/css/style.css */
 
 /*******************************
 
@@ -2951,14 +2951,15 @@ div.panel .content										{ border-width:1px; border-style:solid; padding:5px;
 
 /******************************* 4. INFOS, ALERTS AND ERRORS */
 
-.note													{ clear:both; border-width:1px; border-style:solid; margin:0px 0px 20px; padding:10px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px}
-.note h3												{ font-style:normal; margin:0; font-size:12pt}
-.note p													{ margin-bottom:5px}
-.hide													{ background:url('../../dressprow/images/close_button1.gif') no-repeat; display:block; float:right; margin-top:-5px; margin-right:-5px; overflow:hidden; height:20px; text-indent:-9999px; width:20px}
-.error													{ margin:10px 0px}
-.result													{ clear:both}
-.announcements                                          { margin-bottom:40px !important; padding: 7px !important;}
-.news                                                   { font-size: 120%; }
+.note{ clear:both; border-width:1px; border-style:solid; margin:0px 0px 20px; padding:10px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px}
+.note h3{ font-style:normal; margin:0; font-size:12pt}
+.note p{ margin-bottom:5px}
+.note a{ text-decoration:underline}
+.hide{ background:url('../../dressprow/images/close_button1.gif') no-repeat; display:block; float:right; margin-top:-5px; margin-right:-5px; overflow:hidden; height:20px; text-indent:-9999px; width:20px}
+.error{ margin:10px 0px}
+.result{ clear:both}
+.announcements{ margin-bottom:40px !important; padding: 7px !important}
+.news{ font-size: 120%}
 
 
 /******************************* 5. INDIVIDUAL HELP POPUP AND FORM POPUP */
@@ -3114,14 +3115,17 @@ tr .listingname a:hover, tr .listingelement a:hover		{ text-decoration:none}
 .panel table td											{ border-width:1px; border-style:solid; padding:4px}
 .panel table th											{ text-align:center; font-weight:bold; background:url('../../dressprow/images/header-bg.gif') repeat-x; border-width:1px; border-style:solid; }
 .memberCount                                            { color: #0A0; }
-.unconfirmedCount                                       { color: #C55; }
-.blacklistedCount                                       { color: #FFA500; }
+.unconfirmedCount                                       { color: #FFA500; }
+.blacklistedCount                                       { color: #C55; }
 
 /* drag and drop */
 .save													{ background:url('../../dressprow/images/16x16/alert.png'); height:16px; width:16px; display:inline-block; margin-right:5px}
 
 
 /******************************* 10. ICONS AND BUTTONS */
+
+a.action-button{line-height:1.5 !important;display:inline-block;padding:3px !important;text-align:center; }
+a.action-button::first-letter {text-transform:uppercase}
 
 /* login/logout buttons */
 #logged													{ float:left; margin-top:15px; float:right}
@@ -3379,6 +3383,12 @@ table.messagesendstats									{ float:right; margin-right:10px}
 #messagefilterform select								{ width:100px; float:left; margin:0px 3px;height:28px;padding:4px}
 #messagefilterform select.numppOptions					{ width:50px}
 #messagefilterform										{ border-width:1px;border-style:solid;padding:4px 8px;-webkit-border-radius:8px; -moz-border-radius:8px; border-radius:8px}
+/* REDUCE IMAGE WIDTH ON VIEW CAMPAIGN TO NOT BREAK TABLE*/
+body.message table.messageView td img { max-width:100% !important;height:auto !important}
+/* HIDE TABLES IN DESIGN EMAILS WHEN WIDTH EXCEED VIEW CAMPAIGN TABLE WIDTH */
+body.message div.panel .content{ overflow:hidden}
+/* REMOVE BACKGROUND COLOR ON TABLES inside MAILINGS DESING */
+body.message div.panel table.messageView table{ background-color:transparent}
 
 /* user page */
 table.userAdd .dataname									{ width:auto}
@@ -3451,7 +3461,7 @@ body.templates span.button 								{ background-image:none; float:right; margin-
 
 /* End of /lists/admin/ui/dressprow/css/style.css */
 
-/*phplist-ui-dressprow/css/gray.css*/ /* File:/lists/admin/ui/dressprow/css/gray.css */
+/*phpListThemes/phplist-ui-dressprow/css/gray.css*/ /* File:/lists/admin/ui/dressprow/css/gray.css */
 
 
 /******************************* 
