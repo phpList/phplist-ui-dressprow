@@ -84,5 +84,8 @@ $parseresult = $rss->parse('https://www.phplist.org/newslist/feed/', 'phplistnew
 if ($parseresult) {
     $_SESSION['news']['short'] = buildNews($rss, 3);
     $_SESSION['news']['long'] = buildNews($rss, 10);
-    echo $_SESSION['news'][$newsSize];
+} else {
+    $_SESSION['news']['short'] = '';
+    $_SESSION['news']['long'] = '';
 }
+echo $_SESSION['news'][$newsSize];
