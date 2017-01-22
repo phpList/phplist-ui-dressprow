@@ -18,10 +18,11 @@
         <div id="newsfeed" class="menutableright block">
             <h3><?php echo s('phpList community news'); ?></h3>
             <?php include 'communityfeed.php'; ?>
+        </div>
 	</div><!-- end #right-bar -->
 </div> <!-- end #container -->
 	
-	<div class="clear"></div>
+<div class="clear"></div>
 
 
 <div id="footer">
