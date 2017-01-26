@@ -13,7 +13,6 @@
         <div id="language">
             <?php print $languageswitcher; ?>
         </div>
-        <div id="themedrop"><?php print $themeswitcher; ?></div>
 	<div class="clear"></div>
         <div id="newsfeed" class="menutableright block">
             <h3><?php echo s('phpList community news'); ?></h3>
