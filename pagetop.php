@@ -25,11 +25,11 @@
 <!-- initial styles and JS from basic application -->
 
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui-1.12.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.1.all.min.js"></script>
 <script type="text/javascript" src="js/jquery.tools.scrollable.js"></script>
 <script type="text/javascript" src="js/phplistapp.js"></script>
 <link rel="stylesheet" href="css/reset.css" />
-<link href="css/jquery-ui-1.12.1.min.css" rel="stylesheet" type="text/css"/>
+<link href="css/jquery-ui-1.8.1.all.css" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" href="css/app.css" />
 <link rel="stylesheet" href="css/menu.css" />
 
