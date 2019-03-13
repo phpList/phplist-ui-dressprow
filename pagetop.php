@@ -23,7 +23,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 <!-- initial styles and JS from basic application -->
-<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.1.all.min.js"></script>
 <script type="text/javascript" src="js/jquery.tools.scrollable.js"></script>
 <script type="text/javascript" src="js/phplistapp.js"></script>
